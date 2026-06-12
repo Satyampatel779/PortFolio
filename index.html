@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satyam Patel — AI/ML Engineer</title>
+  <meta name="description" content="Satyam Patel — AI/ML Engineer building production RAG systems, reinforcement learning agents, and computer vision pipelines. Cut LLM hallucinations by 98%, vector search across 25k+ docs under 1.5s." />
+  <meta name="author" content="Satyam Patel" />
+  <meta name="theme-color" content="#060609" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://satyampatel779.github.io/" />
+  <meta property="og:title" content="Satyam Patel — AI/ML Engineer" />
+  <meta property="og:description" content="Production AI systems: RAG architectures, RL agents, computer vision pipelines, agentic AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://satyampatel779.github.io/" />
+  <meta property="og:image" content="https://satyampatel779.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Satyam Patel — AI/ML Engineer" />
+  <meta name="twitter:description" content="Production AI systems: RAG architectures, RL agents, computer vision pipelines, agentic AI." />
+  <meta name="twitter:image" content="https://satyampatel779.github.io/assets/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Satyam Patel",
+    "jobTitle": "AI/ML Engineer",
+    "worksFor": { "@type": "Organization", "name": "Interact Health PRO (IHP)" },
+    "email": "mailto:Satyampatel779@gmail.com",
+    "telephone": "437-757-7717",
+    "url": "https://satyampatel779.github.io/",
+    "address": { "@type": "PostalAddress", "addressCountry": "CA" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Alberta" },
+      { "@type": "CollegeOrUniversity", "name": "Conestoga College" },
+      { "@type": "CollegeOrUniversity", "name": "Lovely Professional University" }
+    ],
+    "knowsAbout": ["Machine Learning", "Retrieval-Augmented Generation", "Reinforcement Learning", "Computer Vision", "MLOps", "LangChain", "PyTorch", "TensorFlow"],
+    "sameAs": [
+      "https://github.com/Satyampatel779",
+      "https://www.linkedin.com/in/satyampatel779/",
+      "https://huggingface.co/Satyamp777"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%236366f1'/><stop offset='.5' stop-color='%23a855f7'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='%23060609'/><text x='50' y='68' font-family='Arial Black,sans-serif' font-size='48' font-weight='900' text-anchor='middle' fill='url(%23g)'>SP</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <noscript>
+    <style>
+      .preloader, .cursor-dot, .cursor-ring { display: none !important; }
+      .reveal, .reveal-line, .project, .mini-project { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- ░░ PRELOADER ░░ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <span class="preloader__char">S</span><span class="preloader__char">A</span><span class="preloader__char">T</span><span class="preloader__char">Y</span><span class="preloader__char">A</span><span class="preloader__char">M</span>
+      </div>
+      <div class="preloader__bar"><div class="preloader__bar-fill" id="preloaderBar"></div></div>
+      <div class="preloader__count" id="preloaderCount">0%</div>
+    </div>
+    <div class="preloader__curtain"></div>
+    <div class="preloader__curtain preloader__curtain--2"></div>
+  </div>
+
+  <!-- ░░ CUSTOM CURSOR ░░ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"><span class="cursor-ring__label" id="cursorLabel"></span></div>
+
+  <!-- ░░ SCROLL PROGRESS ░░ -->
+  <div class="scroll-progress"><div class="scroll-progress__fill" id="scrollProgress"></div></div>
+
+  <!-- ░░ BACKGROUND FX ░░ -->
+  <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora__blob aurora__blob--1"></div>
+    <div class="aurora__blob aurora__blob--2"></div>
+    <div class="aurora__blob aurora__blob--3"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" data-cursor="pointer">
+      <span class="nav__logo-mark">SP</span>
+      <span class="nav__logo-text">Satyam<span class="accent">.</span></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" class="nav__link" data-cursor="pointer"><span data-text="About">About</span></a>
+      <a href="#experience" class="nav__link" data-cursor="pointer"><span data-text="Experience">Experience</span></a>
+      <a href="#projects" class="nav__link" data-cursor="pointer"><span data-text="Projects">Projects</span></a>
+      <a href="#skills" class="nav__link" data-cursor="pointer"><span data-text="Skills">Skills</span></a>
+      <a href="#education" class="nav__link" data-cursor="pointer"><span data-text="Education">Education</span></a>
+      <a href="#contact" class="nav__cta magnetic" data-cursor="pointer">Let's Talk<span class="nav__cta-dot"></span></a>
+    </nav>
+    <button class="nav__burger" id="navBurger" aria-label="Menu" data-cursor="pointer">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="smooth-content">
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <div class="hero__eyebrow reveal-line">
+          <span class="hero__status"><span class="hero__status-dot"></span>Open to opportunities</span>
+          <span class="hero__loc">📍 Canada</span>
+        </div>
+        <h1 class="hero__title" aria-label="Satyam Patel">
+          <span class="hero__title-line"><span class="hero__title-word" data-word="SATYAM">SATYAM</span></span>
+          <span class="hero__title-line hero__title-line--outline"><span class="hero__title-word" data-word="PATEL">PATEL</span></span>
+        </h1>
+        <div class="hero__sub">
+          <span class="hero__sub-static">AI/ML Engineer crafting</span>
+          <span class="hero__type-wrap"><span class="hero__type" id="typewriter"></span><span class="hero__caret"></span></span>
+        </div>
+        <p class="hero__desc">
+          I design <strong>production-grade AI systems</strong> — RAG architectures that don't hallucinate,
+          reinforcement-learning agents that run on constrained hardware, and computer-vision pipelines that
+          watch the real world in real time.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary magnetic" data-cursor="pointer">
+            <span class="btn__text">Explore My Work</span>
+            <span class="btn__icon">→</span>
+          </a>
+          <a href="assets/Satyam_Patel_Resume.pdf" download class="btn btn--ghost magnetic" data-cursor="pointer">
+            <span class="btn__text">Download Resume</span>
+            <span class="btn__icon">↓</span>
+          </a>
+        </div>
+        <div class="hero__socials">
+          <a href="https://github.com/Satyampatel779" target="_blank" rel="noopener" class="hero__social magnetic" data-cursor="pointer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/satyampatel779/" target="_blank" rel="noopener" class="hero__social magnetic" data-cursor="pointer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3-1.8 0-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.5v6.2zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zm1.8 13H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7z"/></svg>
+          </a>
+          <a href="https://huggingface.co/Satyamp777" target="_blank" rel="noopener" class="hero__social magnetic" data-cursor="pointer" aria-label="Hugging Face">
+            <span class="hero__social-emoji">🤗</span>
+          </a>
+          <a href="mailto:Satyampatel779@gmail.com" class="hero__social magnetic" data-cursor="pointer" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint">
+        <span class="hero__scroll-text">scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+      <div class="hero__badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="circPath" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+          <text class="hero__badge-text"><textPath href="#circPath">OPEN TO WORK • AI/ML ENGINEER • RAG • RL • CV • </textPath></text>
+        </svg>
+        <span class="hero__badge-center">✦</span>
+      </div>
+      <div class="hero__big-bg" aria-hidden="true">AI·ML</div>
+    </section>
+
+    <!-- ░░ METRICS ░░ -->
+    <section class="metrics">
+      <div class="metrics__grid">
+        <div class="metric tilt-card spotlight" data-cursor="pointer">
+          <div class="metric__value"><span class="counter" data-target="98" data-suffix="%">0</span></div>
+          <div class="metric__label">LLM hallucinations cut via custom RAG architecture</div>
+        </div>
+        <div class="metric tilt-card spotlight" data-cursor="pointer">
+          <div class="metric__value"><span class="counter" data-target="25" data-suffix="k+">0</span></div>
+          <div class="metric__label">Documents vector-searched in under 1.5&nbsp;seconds</div>
+        </div>
+        <div class="metric tilt-card spotlight" data-cursor="pointer">
+          <div class="metric__value"><span class="counter" data-target="18" data-suffix="%">0</span></div>
+          <div class="metric__label">Pose-estimation accuracy boost in real-world scenes</div>
+        </div>
+        <div class="metric tilt-card spotlight" data-cursor="pointer">
+          <div class="metric__value"><span class="counter" data-target="37" data-suffix="+">0</span></div>
+          <div class="metric__label">Repositories of AI/ML engineering on GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ MARQUEE ░░ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>PyTorch</span><i>✦</i><span>LangChain</span><i>✦</i><span>LangGraph</span><i>✦</i><span>RAG</span><i>✦</i><span>GRPO</span><i>✦</i><span>PPO</span><i>✦</i><span>TensorFlow</span><i>✦</i><span>YOLOv8</span><i>✦</i><span>Pinecone</span><i>✦</i><span>FastAPI</span><i>✦</i><span>Docker</span><i>✦</i><span>AWS</span><i>✦</i><span>Azure</span><i>✦</i><span>GCP</span><i>✦</i><span>Hugging Face</span><i>✦</i><span>LoRA</span><i>✦</i><span>n8n</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Spark</span><i>✦</i><span>Kafka</span><i>✦</i>
+        <span>PyTorch</span><i>✦</i><span>LangChain</span><i>✦</i><span>LangGraph</span><i>✦</i><span>RAG</span><i>✦</i><span>GRPO</span><i>✦</i><span>PPO</span><i>✦</i><span>TensorFlow</span><i>✦</i><span>YOLOv8</span><i>✦</i><span>Pinecone</span><i>✦</i><span>FastAPI</span><i>✦</i><span>Docker</span><i>✦</i><span>AWS</span><i>✦</i><span>Azure</span><i>✦</i><span>GCP</span><i>✦</i><span>Hugging Face</span><i>✦</i><span>LoRA</span><i>✦</i><span>n8n</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Spark</span><i>✦</i><span>Kafka</span><i>✦</i>
+      </div>
+      <div class="marquee__track marquee__track--rev">
+        <span>Retrieval-Augmented Generation</span><i>✦</i><span>Reinforcement Learning</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Agentic AI</span><i>✦</i><span>Multi-Agent Systems</span><i>✦</i><span>MLOps</span><i>✦</i><span>Vector Search</span><i>✦</i><span>Prompt Engineering</span><i>✦</i><span>Deep Learning</span><i>✦</i><span>Big Data</span><i>✦</i>
+        <span>Retrieval-Augmented Generation</span><i>✦</i><span>Reinforcement Learning</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Agentic AI</span><i>✦</i><span>Multi-Agent Systems</span><i>✦</i><span>MLOps</span><i>✦</i><span>Vector Search</span><i>✦</i><span>Prompt Engineering</span><i>✦</i><span>Deep Learning</span><i>✦</i><span>Big Data</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ░░ ABOUT ░░ -->
+    <section class="section about" id="about">
+      <div class="section__head" data-num="01">
+        <span class="section__num">01</span>
+        <h2 class="section__title" data-split>About Me</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="about__core">
+            <div class="about__halo" aria-hidden="true"></div>
+            <div class="about__halo about__halo--2" aria-hidden="true"></div>
+            <div class="terminal tilt-card" data-cursor="pointer">
+              <div class="terminal__bar">
+                <span class="terminal__dot terminal__dot--r"></span>
+                <span class="terminal__dot terminal__dot--y"></span>
+                <span class="terminal__dot terminal__dot--g"></span>
+                <span class="terminal__title">satyam@ai-engineer: ~</span>
+              </div>
+              <div class="terminal__body" id="terminalBody">
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
+                <div class="t-line t-out">satyam · ai/ml engineer 🇨🇦</div>
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">cat focus.txt</span></div>
+                <div class="t-line t-out">RAG · RL · CV · MLOps</div>
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">./status --live</span></div>
+                <div class="t-line t-out"><span class="t-ok">●</span> open_to_work: <span class="t-ok">true</span></div>
+                <div class="t-line t-out"><span class="t-ok">●</span> hallucinations: <span class="t-pink">−98%</span></div>
+                <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">ship --next-big-thing</span></div>
+                <div class="t-line t-out">▸ ready when you are<span class="terminal__cursor"></span></div>
+              </div>
+            </div>
+            <div class="about__orbit"><span class="about__orbit-chip">🧠 RL</span></div>
+            <div class="about__orbit about__orbit--2"><span class="about__orbit-chip">🔍 RAG</span></div>
+            <div class="about__orbit about__orbit--3"><span class="about__orbit-chip">👁 CV</span></div>
+          </div>
+        </div>
+        <div class="about__content">
+          <p class="about__lead reveal">
+            I'm an <strong>AI Engineer</strong> who ships — not just experiments.
+          </p>
+          <p class="reveal">
+            From engineering an end-to-end <strong>Retrieval-Augmented Generation</strong> architecture that cut LLM
+            hallucinations by <em>98%</em>, to fine-tuning foundational models for autonomous chain-of-thought
+            reasoning with <strong>GRPO on a single 16 GB GPU</strong>, I obsess over making advanced AI work in the
+            real world — under real constraints, with real users.
+          </p>
+          <p class="reveal">
+            Today I lead AI-automation engineering at <strong>Interact Health PRO</strong> — turning healthcare
+            intake, onboarding, and reporting into agentic Claude + Gemini workflows — while specializing in
+            <strong>Reinforcement Learning at the University of Alberta</strong>. Before that: client work through
+            Wellfound, academic research in precision agriculture, and everything from multi-agent Text-to-SQL
+            systems to real-time retail CCTV intelligence platforms.
+          </p>
+          <div class="about__facts">
+            <div class="about__fact reveal"><span class="about__fact-k">Focus</span><span class="about__fact-v">GenAI · RL · Computer Vision · MLOps</span></div>
+            <div class="about__fact reveal"><span class="about__fact-k">Status</span><span class="about__fact-v">Open to AI/ML Engineering roles</span></div>
+            <div class="about__fact reveal"><span class="about__fact-k">Base</span><span class="about__fact-v">Canada 🇨🇦</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ EXPERIENCE ░░ -->
+    <section class="section experience" id="experience">
+      <div class="section__head" data-num="02">
+        <span class="section__num">02</span>
+        <h2 class="section__title" data-split>Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__line"><div class="timeline__line-fill" id="timelineFill"></div></div>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card spotlight tilt-card" data-cursor="pointer">
+            <div class="project__glow"></div>
+            <div class="timeline__meta"><span class="timeline__index">E.01</span><span class="timeline__date">May 2026 — Present</span><span class="tag tag--live">Current</span><span class="timeline__badge"><img src="assets/logos/ihp.png" alt="Interact Health PRO logo" loading="lazy" width="46" height="46" /></span></div>
+            <div class="timeline__visual" aria-hidden="true">
+              <svg viewBox="0 0 640 200" fill="none">
+                <defs>
+                  <linearGradient id="evgD" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#f472b6"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <rect class="pv-box" x="36" y="52" width="118" height="92" rx="10"/>
+                <text class="pv-sub" x="95" y="74" text-anchor="middle">client intake</text>
+                <rect x="50" y="84" width="10" height="10" rx="2" stroke="rgba(255,255,255,.25)"/>
+                <path class="pv-blink" d="M52 89 l3 3 5 -6" stroke="#4ade80" stroke-width="1.5"/>
+                <path d="M68 89 H140" stroke="rgba(255,255,255,.18)"/>
+                <rect x="50" y="104" width="10" height="10" rx="2" stroke="rgba(255,255,255,.25)"/>
+                <path class="pv-blink pv-d2" d="M52 109 l3 3 5 -6" stroke="#4ade80" stroke-width="1.5"/>
+                <path d="M68 109 H140" stroke="rgba(255,255,255,.18)"/>
+                <rect x="50" y="124" width="10" height="10" rx="2" stroke="rgba(255,255,255,.25)"/>
+                <path d="M68 129 H122" stroke="rgba(255,255,255,.18)"/>
+                <path class="pv-flow" d="M154 98 C 192 98, 202 98, 236 98"/>
+                <circle class="pv-ring" cx="284" cy="98" r="40" stroke="url(#evgD)" stroke-dasharray="5 7"/>
+                <circle cx="284" cy="98" r="26" fill="rgba(244,114,182,.10)" stroke="url(#evgD)" stroke-width="1.4" class="pv-pulse"/>
+                <text class="pv-label" x="284" y="95" text-anchor="middle">AI</text>
+                <text class="pv-sub" x="284" y="111" text-anchor="middle">agents</text>
+                <text class="pv-sub" x="284" y="166" text-anchor="middle">Claude · Gemini</text>
+                <path class="pv-flow" d="M320 78 C 372 58, 392 54, 446 54"/>
+                <path class="pv-flow pv-d2" d="M324 98 C 372 98, 392 98, 446 98"/>
+                <path class="pv-flow pv-d3" d="M320 118 C 372 138, 392 142, 446 142"/>
+                <rect class="pv-box" x="446" y="36" width="158" height="36" rx="10"/>
+                <circle class="pv-node pv-blink" cx="464" cy="54" r="4"/>
+                <text class="pv-sub" x="478" y="58">route comms</text>
+                <rect class="pv-box" x="446" y="80" width="158" height="36" rx="10"/>
+                <circle class="pv-node pv-blink pv-d2" cx="464" cy="98" r="4"/>
+                <text class="pv-sub" x="478" y="102">track progress</text>
+                <rect class="pv-box" x="446" y="124" width="158" height="36" rx="10"/>
+                <circle class="pv-node pv-blink pv-d3" cx="464" cy="142" r="4"/>
+                <text class="pv-sub" x="478" y="146">ops reports</text>
+                <text class="pv-tag" x="320" y="192" text-anchor="middle">Airtable + Make.com orchestration · SOPs as code</text>
+              </svg>
+            </div>
+            <h3 class="timeline__role">Project Manager — AI Automation Engineer</h3>
+            <div class="timeline__org">Interact Health PRO (IHP) · Kitchener, ON</div>
+            <ul class="timeline__points">
+              <li>Lead project coordination for a <strong>10+ member cross-functional team</strong> — designing AI-supported healthcare rehabilitation coordination, client intake, and medical-legal workflow prototypes with Scikit-Learn and Google Gemini</li>
+              <li>Architect structured <strong>Claude AI workflows</strong> with Claude Skills, Routines, and CLAUDE.md — repeatable SOPs that replace manual administrative tasks across intake, onboarding, and reporting</li>
+              <li>Build automation infrastructure on <strong>Airtable + Make.com</strong> — conditional-logic triggers and task-based AI agents that route communications, track progress, and generate operational reports in real time</li>
+              <li>Direct sprint planning and workflow-mapping with Operations, Development, and Analyst teams — process documentation in <strong>Git</strong>, testing cycles for automation reliability and on-time delivery</li>
+            </ul>
+            <div class="timeline__impact">
+              <span><b>10+</b> member team led</span>
+              <span><b>SOPs</b> replacing manual ops</span>
+              <span><b>real-time</b> reporting visibility</span>
+            </div>
+            <div class="timeline__stack"><span>Claude AI</span><span>Gemini</span><span>Scikit-Learn</span><span>Airtable</span><span>Make.com</span><span>Git</span></div>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card spotlight tilt-card" data-cursor="pointer">
+            <div class="project__glow"></div>
+            <div class="timeline__meta"><span class="timeline__index">E.02</span><span class="timeline__date">Jan 2026 — Present</span><span class="tag tag--live">Current</span><span class="timeline__badge"><img src="assets/logos/wellfound.png" alt="Wellfound logo" loading="lazy" width="46" height="46" /></span></div>
+            <div class="timeline__visual" aria-hidden="true">
+              <svg viewBox="0 0 640 200" fill="none">
+                <defs>
+                  <linearGradient id="evgA" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#6366f1"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <g class="pv-frame">
+                  <rect class="pv-box" x="36" y="42" width="56" height="70" rx="8"/>
+                  <path d="M46 58 H82 M46 72 H82 M46 86 H74" stroke="rgba(255,255,255,.18)"/>
+                </g>
+                <g class="pv-frame pv-d2">
+                  <rect class="pv-box" x="54" y="58" width="56" height="70" rx="8"/>
+                  <path d="M64 74 H100 M64 88 H100 M64 102 H92" stroke="rgba(255,255,255,.18)"/>
+                </g>
+                <text class="pv-sub" x="80" y="152" text-anchor="middle">25k docs</text>
+                <path class="pv-flow" d="M116 94 C 152 94, 162 94, 196 94"/>
+                <ellipse class="pv-box" cx="244" cy="62" rx="46" ry="14"/>
+                <path class="pv-box" d="M198 62 v66 a46 14 0 0 0 92 0 v-66"/>
+                <circle class="pv-node pv-blink" cx="226" cy="92" r="3"/>
+                <circle class="pv-node pv-blink pv-d2" cx="248" cy="106" r="3"/>
+                <circle class="pv-node pv-blink pv-d3" cx="262" cy="86" r="3"/>
+                <text class="pv-sub" x="244" y="166" text-anchor="middle">Pinecone</text>
+                <path class="pv-flow pv-d2" d="M294 94 C 334 94, 344 94, 382 94"/>
+                <rect class="pv-box" x="382" y="62" width="92" height="64" rx="12"/>
+                <text class="pv-label" x="428" y="90" text-anchor="middle">LLM</text>
+                <text class="pv-sub" x="428" y="108" text-anchor="middle">fine-tuned</text>
+                <path class="pv-flow pv-d3" d="M474 94 C 506 94, 512 94, 536 94"/>
+                <rect class="pv-box" x="536" y="66" width="76" height="56" rx="12" stroke="url(#evgA)"/>
+                <text class="pv-tag" x="574" y="89" text-anchor="middle">✓ cited</text>
+                <text class="pv-sub" x="574" y="107" text-anchor="middle">&lt;1.5s</text>
+                <text class="pv-tag" x="320" y="190" text-anchor="middle">retrieval-grounded generation · TDD on AWS</text>
+              </svg>
+            </div>
+            <h3 class="timeline__role">RAG Chatbot Developer</h3>
+            <div class="timeline__org">Wellfound · Client Engagement</div>
+            <ul class="timeline__points">
+              <li>Engineered an end-to-end <strong>RAG architecture</strong> (LangChain + PyTorch on AWS) with TDD — cut LLM hallucinations by <strong>98%</strong></li>
+              <li>Integrated <strong>Pinecone</strong> with 25,000+ embedded documents — semantic retrieval under <strong>1.5 seconds</strong></li>
+              <li>Fine-tuned the base LLM on proprietary data and shipped to production — <strong>+35% user engagement</strong></li>
+            </ul>
+            <div class="timeline__impact">
+              <span><b>−98%</b> hallucinations</span>
+              <span><b>&lt;1.5s</b> retrieval</span>
+              <span><b>+35%</b> engagement</span>
+            </div>
+            <div class="timeline__stack"><span>LangChain</span><span>PyTorch</span><span>Pinecone</span><span>AWS</span><span>TDD</span></div>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card spotlight tilt-card" data-cursor="pointer">
+            <div class="project__glow"></div>
+            <div class="timeline__meta"><span class="timeline__index">E.03</span><span class="timeline__date">Dec 2025 — Present</span><span class="tag tag--live">Current</span><span class="timeline__badge"><img src="assets/logos/wellfound.png" alt="Wellfound logo" loading="lazy" width="46" height="46" /></span></div>
+            <div class="timeline__visual" aria-hidden="true">
+              <svg viewBox="0 0 640 200" fill="none">
+                <rect class="pv-bb" x="146" y="24" width="186" height="152" rx="6"/>
+                <text class="pv-bb-label" x="146" y="18">person 0.98</text>
+                <g class="ev-skel">
+                  <circle cx="222" cy="52" r="11"/>
+                  <path d="M222 63 V112 M222 76 L190 96 M222 76 L254 98 M222 112 L200 152 M222 112 L244 152"/>
+                </g>
+                <circle class="pv-node pv-blink" cx="222" cy="76" r="4"/>
+                <circle class="pv-node pv-blink pv-d2" cx="190" cy="96" r="4"/>
+                <circle class="pv-node pv-blink pv-d3" cx="254" cy="98" r="4"/>
+                <circle class="pv-node pv-blink pv-d2" cx="222" cy="112" r="4"/>
+                <circle class="pv-node pv-blink" cx="200" cy="152" r="4"/>
+                <circle class="pv-node pv-blink pv-d3" cx="244" cy="152" r="4"/>
+                <g class="ev-skel ev-skel--dim">
+                  <circle cx="296" cy="66" r="10"/>
+                  <path d="M296 76 V118 M296 88 L274 106 M296 88 L318 106 M296 118 L280 154 M296 118 L312 154"/>
+                </g>
+                <rect class="pv-term" x="376" y="38" width="228" height="124" rx="12"/>
+                <text class="pv-sub" x="394" y="64">keypoint QC — live</text>
+                <text class="pv-code" x="394" y="90">▸ occlusion case #1042</text>
+                <text class="pv-code" x="394" y="112">▸ recalibrated L-wrist ✓</text>
+                <text class="pv-code" x="394" y="134">▸ false positives −22%</text>
+                <rect class="pv-caret" x="560" y="124" width="6" height="13"/>
+                <text class="pv-tag" x="320" y="192" text-anchor="middle">pose estimation · overlapping-limb resolution</text>
+              </svg>
+            </div>
+            <h3 class="timeline__role">Computer Vision Data Specialist</h3>
+            <div class="timeline__org">Wellfound · Client Engagement</div>
+            <ul class="timeline__points">
+              <li>Boosted human pose-estimation accuracy by <strong>18%</strong> by resolving 1,000+ complex occlusion edge cases</li>
+              <li>Recalibrated overlapping body keypoints across <strong>10,000+ images</strong> with in-house tooling</li>
+              <li>Cut false-positive detections by <strong>22%</strong> through rigorous data QC and annotation</li>
+            </ul>
+            <div class="timeline__impact">
+              <span><b>+18%</b> pose accuracy</span>
+              <span><b>10k+</b> images refined</span>
+              <span><b>−22%</b> false positives</span>
+            </div>
+            <div class="timeline__stack"><span>Computer Vision</span><span>Pose Estimation</span><span>Data QC</span><span>Python</span></div>
+          </div>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card spotlight tilt-card" data-cursor="pointer">
+            <div class="project__glow"></div>
+            <div class="timeline__meta"><span class="timeline__index">E.04</span><span class="timeline__date">Jan 2024 — Aug 2024</span><span class="timeline__badge"><img src="assets/logos/conestoga.png" alt="Conestoga College logo" loading="lazy" width="46" height="46" /></span></div>
+            <div class="timeline__visual" aria-hidden="true">
+              <svg viewBox="0 0 640 200" fill="none">
+                <defs>
+                  <linearGradient id="evgC" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#4ade80"/><stop offset="1" stop-color="#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <path class="ev-leaf" d="M92 142 C 50 112, 56 58, 96 38 C 136 58, 142 112, 100 142 C 97 145, 95 145, 92 142 Z"/>
+                <path d="M96 44 V138" stroke="rgba(74,222,128,.35)"/>
+                <path d="M96 70 L76 84 M96 92 L116 106 M96 112 L80 124" stroke="rgba(74,222,128,.25)"/>
+                <circle class="pv-blink" cx="112" cy="76" r="6" fill="rgba(244,114,182,.55)"/>
+                <rect class="pv-scan" x="46" y="32" width="3" height="114" rx="2"/>
+                <text class="pv-sub" x="96" y="168" text-anchor="middle">leaf input</text>
+                <path class="pv-flow" d="M152 90 H198"/>
+                <rect class="pv-box" x="198" y="48" width="34" height="86" rx="6"/>
+                <rect class="pv-box" x="244" y="58" width="30" height="66" rx="6"/>
+                <rect class="pv-box" x="286" y="68" width="26" height="46" rx="6"/>
+                <text class="pv-sub" x="254" y="158" text-anchor="middle">VGG16 conv</text>
+                <path class="pv-flow pv-d2" d="M312 90 H352"/>
+                <rect class="pv-term" x="352" y="38" width="252" height="124" rx="12"/>
+                <text class="pv-sub" x="370" y="62">classification</text>
+                <rect x="370" y="74" width="182" height="9" rx="4.5" fill="rgba(255,255,255,.06)"/>
+                <rect class="pv-score pv-score--1" x="370" y="74" width="168" height="9" rx="4.5" fill="url(#evgC)"/>
+                <text class="pv-code" x="590" y="83" text-anchor="end">.92</text>
+                <rect x="370" y="100" width="182" height="9" rx="4.5" fill="rgba(255,255,255,.06)"/>
+                <rect class="pv-score pv-score--2" x="370" y="100" width="38" height="9" rx="4.5" fill="rgba(244,114,182,.6)"/>
+                <text class="pv-code" x="590" y="109" text-anchor="end">.05</text>
+                <rect x="370" y="126" width="182" height="9" rx="4.5" fill="rgba(255,255,255,.06)"/>
+                <rect class="pv-score pv-score--3" x="370" y="126" width="24" height="9" rx="4.5" fill="rgba(255,255,255,.25)"/>
+                <text class="pv-code" x="590" y="135" text-anchor="end">.03</text>
+                <text class="pv-tag" x="320" y="192" text-anchor="middle">The Plant Guard · precision agriculture research</text>
+              </svg>
+            </div>
+            <h3 class="timeline__role">Graduate Research Assistant</h3>
+            <div class="timeline__org">Conestoga College · Waterloo, ON</div>
+            <ul class="timeline__points">
+              <li>Engineered <strong>"The Plant Guard"</strong> — end-to-end CV pipelines (TensorFlow + OpenCV) for early plant-disease detection</li>
+              <li>Processed &amp; augmented tens of thousands of images; trained custom Vanilla CNN and fine-tuned <strong>VGG16</strong></li>
+              <li>Achieved <strong>90%+ classification accuracy</strong> across multiple plant species and pathology categories</li>
+            </ul>
+            <div class="timeline__impact">
+              <span><b>90%+</b> accuracy</span>
+              <span><b>10k+</b> images processed</span>
+              <span><b>VGG16</b> fine-tuned</span>
+            </div>
+            <div class="timeline__stack"><span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>Transfer Learning</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░ PROJECTS ░░ -->
+    <section class="section projects" id="projects">
+      <div class="section__head" data-num="03">
+        <span class="section__num">03</span>
+        <h2 class="section__title" data-split>Featured Work</h2>
+        <p class="section__sub">Production systems, research, and experiments — built end to end.</p>
+      </div>
+
+      <div class="projects__featured">
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.01</span>
+            <span class="tag tag--gold">⭐ Flagship</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <defs>
+                <linearGradient id="pvgA" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#6366f1"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+              <circle class="pv-node pv-blink" cx="72" cy="58" r="6"/>
+              <circle class="pv-node pv-blink pv-d2" cx="60" cy="100" r="6"/>
+              <circle class="pv-node pv-blink pv-d3" cx="72" cy="142" r="6"/>
+              <path class="pv-flow" d="M80 58 C 160 58, 200 88, 262 96"/>
+              <path class="pv-flow pv-d2" d="M68 100 C 150 100, 200 100, 262 100"/>
+              <path class="pv-flow pv-d3" d="M80 142 C 160 142, 200 112, 262 104"/>
+              <circle class="pv-ring" cx="300" cy="100" r="38" stroke="url(#pvgA)" stroke-dasharray="5 7"/>
+              <circle cx="300" cy="100" r="25" fill="rgba(168,85,247,.14)" stroke="url(#pvgA)" stroke-width="1.4" class="pv-pulse"/>
+              <text class="pv-label" x="300" y="104" text-anchor="middle">GRPO</text>
+              <text class="pv-tag pv-blink" x="300" y="36" text-anchor="middle">&lt;think&gt;</text>
+              <path class="pv-flow" d="M338 100 C 400 100, 420 100, 478 100"/>
+              <rect class="pv-box" x="478" y="72" width="118" height="56" rx="12"/>
+              <text class="pv-tag" x="537" y="96" text-anchor="middle">&lt;answer&gt;</text>
+              <text class="pv-sub" x="537" y="114" text-anchor="middle">verified ✓</text>
+              <text class="pv-sub" x="72" y="176" text-anchor="middle">16 GB GPU</text>
+              <text class="pv-sub" x="300" y="176" text-anchor="middle">LoRA · 4-bit</text>
+            </svg>
+          </div>
+          <h3 class="project__title">Autonomous LLM Reasoning Agent</h3>
+          <p class="project__tagline">RLVR / GRPO alignment on a single 16 GB GPU</p>
+          <p class="project__desc">
+            Aligned an LLM for autonomous chain-of-thought reasoning using DeepSeek's <strong>GRPO</strong> —
+            eliminating the critic &amp; reward models entirely with verifiable regex rewards. The full multi-generation
+            RL loop runs on one T4 GPU via Unsloth + LoRA + 4-bit quantization, sidestepping $32/hr A100 clusters.
+            Published the trained model on Hugging Face.
+          </p>
+          <div class="project__stack"><span>PyTorch</span><span>GRPO</span><span>RLVR</span><span>LoRA</span><span>Unsloth</span><span>4-bit Quant</span></div>
+          <div class="project__links">
+            <a href="https://github.com/Satyampatel779/Megatron-VeRL-Agent" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">GitHub ↗</a>
+            <a href="https://huggingface.co/Satyamp777/Qwen-GRPO-Agent" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">🤗 Model ↗</a>
+          </div>
+        </article>
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.02</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <rect class="pv-box" x="36" y="36" width="156" height="62" rx="12"/>
+              <text class="pv-label" x="114" y="62" text-anchor="middle">SQL Writer</text>
+              <text class="pv-sub" x="114" y="82" text-anchor="middle">Llama-3.3-70B</text>
+              <rect class="pv-box" x="242" y="36" width="156" height="62" rx="12"/>
+              <text class="pv-label" x="320" y="62" text-anchor="middle">Executor</text>
+              <text class="pv-sub" x="320" y="82" text-anchor="middle">sandbox · critic</text>
+              <rect class="pv-box" x="448" y="36" width="156" height="62" rx="12"/>
+              <text class="pv-label" x="526" y="62" text-anchor="middle">Analyst</text>
+              <text class="pv-sub" x="526" y="82" text-anchor="middle">insight synth</text>
+              <path class="pv-flow" d="M192 67 H242"/>
+              <path class="pv-flow" d="M398 67 H448"/>
+              <path class="pv-flow pv-flow--err" d="M320 98 C 320 136, 114 136, 114 98"/>
+              <text class="pv-err pv-blink" x="217" y="146" text-anchor="middle">⟲ retry on traceback ×3</text>
+              <rect class="pv-term" x="36" y="160" width="568" height="26" rx="7"/>
+              <text class="pv-code" x="48" y="177">SELECT segment, SUM(total) FROM orders JOIN customers…</text>
+              <rect class="pv-caret" x="442" y="166" width="6" height="14"/>
+            </svg>
+          </div>
+          <h3 class="project__title">Multi-Agent Text-to-SQL Data Analyst</h3>
+          <p class="project__tagline">Self-correcting agentic loop · 85% faster queries</p>
+          <p class="project__desc">
+            A stateful <strong>LangGraph</strong> multi-agent system — SQL Writer (Llama-3.3-70B), deterministic
+            Executor/Critic with conditional error-routing, and an Analyst that synthesizes business insights.
+            It writes SQL, sandboxes it, reads its own tracebacks, and patches itself. Wrapped in FastAPI + Docker,
+            re-architected on MongoDB for 50,000+ concurrent requests.
+          </p>
+          <div class="project__stack"><span>LangGraph</span><span>Llama-3.3 (Groq)</span><span>MongoDB</span><span>FastAPI</span><span>Docker</span><span>n8n</span></div>
+          <div class="project__links">
+            <a href="https://github.com/Satyampatel779/Multi-Agent-Text-to-SQL-System" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.03</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <defs>
+                <linearGradient id="pvgC" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <rect class="pv-box" x="76" y="30" width="108" height="110" rx="12"/>
+              <rect class="pv-box" x="266" y="30" width="108" height="110" rx="12"/>
+              <rect class="pv-box" x="456" y="30" width="108" height="110" rx="12"/>
+              <circle class="pv-blink" cx="96" cy="48" r="4" fill="#4ade80"/>
+              <circle class="pv-blink pv-d2" cx="286" cy="48" r="4" fill="#4ade80"/>
+              <circle class="pv-blink pv-d3" cx="476" cy="48" r="4" fill="#f472b6"/>
+              <rect x="100" y="64" width="16" height="62" rx="4" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-load pv-load--1" x="100" y="64" width="16" height="62" rx="4" fill="url(#pvgC)"/>
+              <rect x="290" y="64" width="16" height="62" rx="4" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-load pv-load--2" x="290" y="64" width="16" height="62" rx="4" fill="url(#pvgC)"/>
+              <rect x="480" y="64" width="16" height="62" rx="4" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-load pv-load--3" x="480" y="64" width="16" height="62" rx="4" fill="url(#pvgC)"/>
+              <text class="pv-sub" x="148" y="100" text-anchor="middle">cpu</text>
+              <text class="pv-sub" x="338" y="100" text-anchor="middle">cpu</text>
+              <text class="pv-sub" x="528" y="100" text-anchor="middle">heat!</text>
+              <path d="M90 168 H560" stroke="rgba(255,255,255,.1)" stroke-dasharray="3 6"/>
+              <circle class="pv-agent" cy="168" r="6" fill="#22d3ee"/>
+              <text class="pv-tag" x="320" y="192" text-anchor="middle">PPO agent routing · −30% energy</text>
+            </svg>
+          </div>
+          <h3 class="project__title">Autonomous Cloud Resource Optimizer</h3>
+          <p class="project__tagline">Deep RL for data-center economics · −30% infra cost</p>
+          <p class="project__desc">
+            Custom <strong>Gymnasium MDP</strong> simulating a 3-node data center; a PPO agent learns to route live
+            traffic, balancing energy, heat, and uptime. Defeated reward-hacking (the agent literally preferred
+            crashing servers to paying the power bill) with an engineered exponential-heat + survival reward.
+            Dockerized FastAPI microservice with a live Streamlit dashboard.
+          </p>
+          <div class="project__stack"><span>Stable-Baselines3</span><span>PPO</span><span>Gymnasium</span><span>Streamlit</span><span>TensorBoard</span><span>Docker</span></div>
+          <div class="project__links">
+            <a href="https://github.com/Satyampatel779/Cloud-RL-Optimizer" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.04</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <path d="M28 44 V28 H52" class="pv-corner"/><path d="M588 28 H612 V44" class="pv-corner"/>
+              <path d="M28 156 V172 H52" class="pv-corner"/><path d="M588 172 H612 V156" class="pv-corner"/>
+              <text class="pv-err pv-blink" x="44" y="52">● REC</text>
+              <text class="pv-sub" x="566" y="52">CAM-04</text>
+              <circle cx="200" cy="92" r="11" fill="rgba(255,255,255,.1)"/>
+              <rect x="186" y="106" width="28" height="46" rx="9" fill="rgba(255,255,255,.1)"/>
+              <circle cx="420" cy="98" r="11" fill="rgba(255,255,255,.1)"/>
+              <rect x="406" y="112" width="28" height="44" rx="9" fill="rgba(255,255,255,.1)"/>
+              <rect class="pv-bb" x="174" y="72" width="52" height="86" rx="5"/>
+              <text class="pv-bb-label" x="174" y="66">person 0.97</text>
+              <rect class="pv-bb pv-bb--alert pv-d2" x="394" y="78" width="52" height="84" rx="5"/>
+              <text class="pv-bb-label pv-bb-label--alert pv-d2" x="394" y="72">match ⚠ 0.91</text>
+              <rect class="pv-scan" x="28" y="28" width="3" height="144" rx="2"/>
+              <text class="pv-tag" x="320" y="190" text-anchor="middle">YOLOv8x → SFace embeddings → WebSocket alert</text>
+            </svg>
+          </div>
+          <h3 class="project__title">Retail Vision Intelligence Platform</h3>
+          <p class="project__tagline">Real-time CCTV security + AI voice assistant</p>
+          <p class="project__desc">
+            End-to-end CCTV pipeline: <strong>YOLOv8x</strong> person detection, YuNet/SFace facial embeddings,
+            centroid multi-person tracking, and aisle-zone analytics. FastAPI backend with async job threading and
+            <strong>WebSocket alert channels</strong> pushes live watchlist matches to an operator dashboard — plus an
+            OpenAI-TTS store phone assistant with multi-turn memory and mood-aware prosody.
+          </p>
+          <div class="project__stack"><span>YOLOv8x</span><span>YuNet/SFace</span><span>OpenCV</span><span>WebSocket</span><span>FastAPI</span><span>OpenAI TTS</span></div>
+          <div class="project__links">
+            <a href="https://github.com/Satyampatel779/ShopLifters-Detection" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.05</span>
+            <span class="tag">🏆 Hackathon</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <defs>
+                <linearGradient id="pvgE" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+              <path d="M40 60 H300 M40 110 H300 M40 160 H300 M100 30 V175 M190 30 V175 M260 30 V175" stroke="rgba(255,255,255,.07)" stroke-dasharray="2 6"/>
+              <path class="pv-pin" d="M150 78 l9 14 a11 11 0 1 1 -18 0 z" fill="#f472b6"/>
+              <path class="pv-pin pv-d2" d="M226 118 l8 12 a10 10 0 1 1 -16 0 z" fill="#22d3ee"/>
+              <path class="pv-pin pv-d3" d="M76 128 l8 12 a10 10 0 1 1 -16 0 z" fill="#a855f7"/>
+              <text class="pv-sub" x="150" y="64" text-anchor="middle">subject</text>
+              <rect class="pv-term" x="350" y="34" width="254" height="132" rx="12"/>
+              <text class="pv-sub" x="368" y="58">ranked comps</text>
+              <rect x="368" y="70" width="200" height="10" rx="5" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-score pv-score--1" x="368" y="70" width="184" height="10" rx="5" fill="url(#pvgE)"/>
+              <text class="pv-code" x="588" y="79" text-anchor="end">92</text>
+              <rect x="368" y="96" width="200" height="10" rx="5" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-score pv-score--2" x="368" y="96" width="174" height="10" rx="5" fill="url(#pvgE)"/>
+              <text class="pv-code" x="588" y="105" text-anchor="end">87</text>
+              <rect x="368" y="122" width="200" height="10" rx="5" fill="rgba(255,255,255,.06)"/>
+              <rect class="pv-score pv-score--3" x="368" y="122" width="162" height="10" rx="5" fill="url(#pvgE)"/>
+              <text class="pv-code" x="588" y="131" text-anchor="end">81</text>
+              <text class="pv-sub" x="368" y="156">value band $1.18M – $1.34M ✓</text>
+            </svg>
+          </div>
+          <h3 class="project__title">KV Capital — Comparable-Sales AI</h3>
+          <p class="project__tagline">Real-estate underwriting copilot · 39 passing tests</p>
+          <p class="project__desc">
+            Give it a property, get a ranked, <em>explained</em> shortlist of comparable sales in seconds. Four-stage
+            retrieve → filter → rank → summarize engine with a 0–100 similarity score, implied value bands,
+            time-adjusted pricing, interactive maps, and a <strong>grounded AI memo writer that is machine-checked
+            for fabrication</strong>. Human-in-the-loop by design.
+          </p>
+          <div class="project__stack"><span>FastAPI</span><span>MongoDB Atlas</span><span>Groq Llama-3.3</span><span>Streamlit</span><span>Docker</span><span>Pytest</span></div>
+          <div class="project__links">
+            <a href="https://github.com/Satyampatel779/KV-Comp-Analysis" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">GitHub ↗</a>
+            <a href="https://www.loom.com/share/23ac32065bef47f48d0be2b66b1780d9" target="_blank" rel="noopener" class="project__link magnetic" data-cursor="pointer">🎥 Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="project tilt-card spotlight" data-cursor="view">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__index">P.06</span>
+            <span class="tag tag--private">🔒 Private / Client</span>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <svg viewBox="0 0 640 200" fill="none">
+              <defs>
+                <linearGradient id="pvgF" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+              <rect class="pv-box" x="28" y="76" width="104" height="48" rx="24"/>
+              <text class="pv-label" x="80" y="104" text-anchor="middle">prompt</text>
+              <path class="pv-flow" d="M132 100 H172"/>
+              <g class="pv-frame">
+                <rect class="pv-box" x="172" y="56" width="62" height="88" rx="8"/>
+                <circle cx="181" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="181" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <circle cx="225" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="225" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <text class="pv-sub" x="203" y="105" text-anchor="middle">veo</text>
+              </g>
+              <g class="pv-frame pv-d2">
+                <rect class="pv-box" x="244" y="56" width="62" height="88" rx="8"/>
+                <circle cx="253" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="253" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <circle cx="297" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="297" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <text class="pv-sub" x="275" y="105" text-anchor="middle">×12</text>
+              </g>
+              <g class="pv-frame pv-d3">
+                <rect class="pv-box" x="316" y="56" width="62" height="88" rx="8"/>
+                <circle cx="325" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="325" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <circle cx="369" cy="66" r="2" fill="rgba(255,255,255,.25)"/><circle cx="369" cy="134" r="2" fill="rgba(255,255,255,.25)"/>
+                <text class="pv-sub" x="347" y="105" text-anchor="middle">srt</text>
+              </g>
+              <path class="pv-flow" d="M378 100 H418"/>
+              <rect class="pv-term" x="418" y="48" width="194" height="104" rx="12"/>
+              <path d="M498 86 l24 14 -24 14 z" fill="url(#pvgF)" class="pv-pulse"/>
+              <rect x="434" y="132" width="162" height="5" rx="2.5" fill="rgba(255,255,255,.08)"/>
+              <rect class="pv-progress" x="434" y="132" width="162" height="5" rx="2.5" fill="url(#pvgF)"/>
+              <text class="pv-sub" x="515" y="70" text-anchor="middle">render → upload ↑</text>
+              <text class="pv-tag" x="320" y="186" text-anchor="middle">n8n orchestration · &lt;3 min per clip</text>
+            </svg>
+          </div>
+          <h3 class="project__title">AI Automation Pipeline Suite</h3>
+          <p class="project__tagline">Text prompt → published video, fully autonomous</p>
+          <p class="project__desc">
+            An n8n production pipeline that turns a single text prompt into a 12-scene storyboard, AI-generated
+            video clips (<strong>Gemini 2.5 Pro + Veo</strong>), captions, narration, FFmpeg renders, and an
+            automated YouTube upload — with resilient async orchestration keeping per-clip delivery under 3 minutes.
+            Plus a multi-brand product-feed optimizer generating Google Ads &amp; Meta assets from full catalogs.
+          </p>
+          <div class="project__stack"><span>n8n</span><span>Vertex AI</span><span>Veo</span><span>Gemini</span><span>Claude API</span><span>FFmpeg</span></div>
+          <div class="project__links">
+            <span class="project__link project__link--disabled">Client Confidential</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- more projects -->
+      <h3 class="projects__more-title reveal">More Builds</h3>
+      <div class="projects__grid">
+        <a href="https://github.com/Satyampatel779/EMS-Pro---Employee-Management-System" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">🏢</span>
+          <h4>EMS Pro — HR Platform</h4>
+          <p>Full-stack employee management: JWT auth, role-based access, attendance &amp; leave workflows.</p>
+          <div class="mini-project__stack">React · Node · MongoDB · Tailwind</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/AI-Resume-Screening---100Percent--Training-Accuracy" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">📄</span>
+          <h4>AI Resume Screener</h4>
+          <p>Ensemble NLP classifier sorting resumes into 25 job categories with eligibility scoring.</p>
+          <div class="mini-project__stack">Scikit-Learn · NLTK · Flask</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/the-plant-guard" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">🌱</span>
+          <h4>The Plant Guard</h4>
+          <p>Research-grade plant species ID + disease diagnosis. Vanilla CNN vs fine-tuned VGG16, 90%+ accuracy.</p>
+          <div class="mini-project__stack">TensorFlow · Keras · OpenCV</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/Pac-Man-RL-DQN" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">👾</span>
+          <h4>Ms. Pac-Man DQN</h4>
+          <p>Deep Q-Network learning from raw pixels — experience replay, target networks, ε-greedy exploration.</p>
+          <div class="mini-project__stack">TensorFlow · Gymnasium · CNN</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/Loblaws--Predicting-Customer-Attrition" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">🛒</span>
+          <h4>Loblaws Churn Prediction</h4>
+          <p>5-model comparison with SMOTE class balancing and ROC-AUC evaluation for retention strategy.</p>
+          <div class="mini-project__stack">Scikit-Learn · SMOTE · Pandas</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/NASA-APOD-Finals" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">🔭</span>
+          <h4>NASA APOD Data Pipeline</h4>
+          <p>Fetch → validate → NLP analyze → visualize pipeline with quality reports and a Flask explorer UI.</p>
+          <div class="mini-project__stack">Python · SQLite · spaCy · Flask</div>
+        </a>
+        <a href="https://github.com/Satyampatel779/AI-Powered-Retail-Price-Optimization" target="_blank" rel="noopener" class="mini-project spotlight" data-cursor="view">
+          <span class="mini-project__emoji">💸</span>
+          <h4>Retail Price Optimization</h4>
+          <p>ML pricing engine analyzing competitor data, seasonality, and demand across 30+ features.</p>
+          <div class="mini-project__stack">Scikit-Learn · Pandas · EDA</div>
+        </a>
+        <a href="https://github.com/Satyampatel779?tab=repositories" target="_blank" rel="noopener" class="mini-project mini-project--all spotlight" data-cursor="view">
+          <span class="mini-project__emoji">⚡</span>
+          <h4>All 37 Repositories</h4>
+          <p>Regression labs, GoodLife Fitness analytics, TikTok data analysis, and more on GitHub.</p>
+          <div class="mini-project__stack">github.com/Satyampatel779 →</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ░░ STATEMENT ░░ -->
+    <section class="statement" aria-label="Philosophy">
+      <p class="statement__text" id="statementText">Anyone can train a model. I engineer systems that <span class="statement__accent">survive production.</span></p>
+    </section>
+
+    <!-- ░░ SKILLS ░░ -->
+    <section class="section skills" id="skills">
+      <div class="section__head" data-num="04">
+        <span class="section__num">04</span>
+        <h2 class="section__title" data-split>Arsenal</h2>
+        <p class="section__sub">The stack I reach for when ideas need to become systems.</p>
+      </div>
+      <div class="skills__grid">
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">🧬</span><h3>Generative AI &amp; LLMs</h3></div>
+          <div class="skill-card__chips"><span>LangChain</span><span>LangGraph</span><span>RAG Systems</span><span>Vector DBs</span><span>OpenAI APIs</span><span>Llama-3.3</span><span>DeepSeek</span><span>LoRA</span><span>Hugging Face</span><span>Agentic AI</span><span>Gemini / Vertex AI</span><span>Prompt Engineering</span></div>
+        </div>
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">🤖</span><h3>ML &amp; Deep Learning</h3></div>
+          <div class="skill-card__chips"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-Learn</span><span>NLP</span><span>Feature Engineering</span><span>Anomaly Detection</span><span>Statistical Modeling</span><span>Model Drift Monitoring</span></div>
+        </div>
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">🎯</span><h3>Reinforcement Learning</h3></div>
+          <div class="skill-card__chips"><span>PPO</span><span>GRPO</span><span>DQN</span><span>Stable-Baselines3</span><span>Custom MDP Design</span><span>Gymnasium</span><span>SARSA</span><span>Reward Engineering</span></div>
+        </div>
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">☁️</span><h3>MLOps &amp; Cloud</h3></div>
+          <div class="skill-card__chips"><span>Docker</span><span>FastAPI</span><span>CI/CD</span><span>AWS</span><span>Azure</span><span>GCP</span><span>Streamlit</span><span>TensorBoard</span><span>Git</span><span>Linux</span><span>TDD</span></div>
+        </div>
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">🗄️</span><h3>Data Engineering</h3></div>
+          <div class="skill-card__chips"><span>Python</span><span>SQL / PostgreSQL</span><span>C/C++</span><span>JavaScript</span><span>Apache Spark</span><span>Hadoop</span><span>MongoDB</span><span>Kafka / RabbitMQ</span><span>ETL / ELT</span></div>
+        </div>
+        <div class="skill-card spotlight tilt-card reveal" data-cursor="pointer">
+          <div class="skill-card__head"><span class="skill-card__icon">🔮</span><h3>Orchestration &amp; XAI</h3></div>
+          <div class="skill-card__chips"><span>n8n</span><span>Claude Skills / Routines</span><span>Airtable</span><span>Make.com</span><span>Multi-Agent Workflows</span><span>Semantic Routing</span><span>Tool Calling</span><span>Webhooks / OAuth 2.0</span><span>SHAP</span><span>LIME</span><span>Reward Attribution</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ PROCESS ░░ -->
+    <section class="section process" id="process">
+      <div class="section__head" data-num="05">
+        <span class="section__num">05</span>
+        <h2 class="section__title" data-split>How I Ship</h2>
+        <p class="section__sub">The same loop, every project — from hackathon weekend to client production.</p>
+      </div>
+      <div class="process__grid">
+        <div class="step-card spotlight reveal" data-cursor="pointer">
+          <span class="step-card__num">01</span>
+          <h3>Understand</h3>
+          <p>Interrogate the problem before the model — the data, the constraints, the users, and the one metric that actually matters.</p>
+        </div>
+        <div class="step-card spotlight reveal" data-cursor="pointer">
+          <span class="step-card__num">02</span>
+          <h3>Architect</h3>
+          <p>Design the system end-to-end: models, pipelines, infra, and failure modes. Reward hacking and hallucinations are design problems.</p>
+        </div>
+        <div class="step-card spotlight reveal" data-cursor="pointer">
+          <span class="step-card__num">03</span>
+          <h3>Build</h3>
+          <p>Production code from day one — tested, containerized, observable. FastAPI + Docker + CI/CD, not a notebook that "works on my machine".</p>
+        </div>
+        <div class="step-card spotlight reveal" data-cursor="pointer">
+          <span class="step-card__num">04</span>
+          <h3>Measure &amp; Iterate</h3>
+          <p>Validate against real metrics — latency, accuracy, cost. Tighten the loop until the system is boring. Boring means reliable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ EDUCATION ░░ -->
+    <section class="section education" id="education">
+      <div class="section__head" data-num="06">
+        <span class="section__num">06</span>
+        <h2 class="section__title" data-split>Education</h2>
+      </div>
+      <div class="education__grid">
+        <div class="edu-card spotlight tilt-card reveal" data-cursor="pointer" data-icon="🧠">
+          <span class="edu-card__year">2026</span>
+          <h3>University of Alberta</h3>
+          <p>Specialization, Reinforcement Learning</p>
+          <span class="edu-card__loc">Edmonton, AB</span>
+        </div>
+        <div class="edu-card spotlight tilt-card reveal" data-cursor="pointer" data-icon="📊">
+          <span class="edu-card__year">2025</span>
+          <h3>Conestoga College</h3>
+          <p>Post-Grad, Big Data Solution Architecture</p>
+          <span class="edu-card__loc">Kitchener, ON</span>
+        </div>
+        <div class="edu-card spotlight tilt-card reveal" data-cursor="pointer" data-icon="🤖">
+          <span class="edu-card__year">2024</span>
+          <h3>Conestoga College</h3>
+          <p>Post-Grad, Artificial Intelligence &amp; Machine Learning</p>
+          <span class="edu-card__loc">Waterloo, ON</span>
+        </div>
+        <div class="edu-card spotlight tilt-card reveal" data-cursor="pointer" data-icon="💻">
+          <span class="edu-card__year">2020</span>
+          <h3>Lovely Professional University</h3>
+          <p>B.Tech, Computer Science</p>
+          <span class="edu-card__loc">India</span>
+        </div>
+      </div>
+
+      <div class="certs reveal">
+        <h3 class="certs__title">Certifications</h3>
+        <div class="certs__list">
+          <span class="cert-chip" data-cursor="pointer">Microsoft AI &amp; ML Engineering — Azure</span>
+          <span class="cert-chip" data-cursor="pointer">Microsoft Azure AI: Intelligent Troubleshooting Agents</span>
+          <span class="cert-chip" data-cursor="pointer">Microsoft Professional Program in AI</span>
+          <span class="cert-chip" data-cursor="pointer">Amazon Alexa Developer</span>
+          <span class="cert-chip" data-cursor="pointer">TCPS 2: CORE</span>
+          <span class="cert-chip" data-cursor="pointer">COC Workship</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CONTACT ░░ -->
+    <section class="section contact" id="contact">
+      <div class="contact__inner">
+        <span class="contact__eyebrow reveal">Got a hard AI problem?</span>
+        <h2 class="contact__title">
+          <span class="contact__title-line" data-split>Let's build something</span>
+          <span class="contact__title-line contact__title-line--grad" data-split>impossible.</span>
+        </h2>
+        <div class="contact__roles reveal">
+          <span class="contact__roles-label">Open to</span>
+          <span class="role-chip">AI/ML Engineer</span>
+          <span class="role-chip">GenAI / LLM Engineer</span>
+          <span class="role-chip">Computer Vision Engineer</span>
+          <span class="role-chip">MLOps Engineer</span>
+        </div>
+        <a href="mailto:Satyampatel779@gmail.com" class="contact__mail magnetic" data-cursor="pointer">
+          <span>Satyampatel779@gmail.com</span>
+          <span class="contact__mail-arrow">↗</span>
+        </a>
+        <div class="contact__row reveal">
+          <button type="button" id="copyEmail" class="contact__chip magnetic" data-cursor="pointer">📋 Copy Email</button>
+          <a href="tel:+14377577717" class="contact__chip magnetic" data-cursor="pointer">📞 437-757-7717</a>
+          <a href="https://www.linkedin.com/in/satyampatel779/" target="_blank" rel="noopener" class="contact__chip magnetic" data-cursor="pointer">LinkedIn ↗</a>
+          <a href="https://github.com/Satyampatel779" target="_blank" rel="noopener" class="contact__chip magnetic" data-cursor="pointer">GitHub ↗</a>
+          <a href="https://huggingface.co/Satyamp777" target="_blank" rel="noopener" class="contact__chip magnetic" data-cursor="pointer">🤗 Hugging Face ↗</a>
+          <a href="assets/Satyam_Patel_Resume.pdf" download class="contact__chip magnetic" data-cursor="pointer">Resume ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FOOTER ░░ -->
+    <footer class="footer">
+      <div class="footer__name" aria-hidden="true">SATYAM&nbsp;PATEL</div>
+      <div class="footer__inner">
+        <span>© 2026 Satyam Patel · <span class="footer__status"><span class="footer__status-dot"></span>online</span></span>
+        <span class="footer__mid">Designed &amp; engineered with <span class="accent">♥</span> + AI</span>
+        <a href="#hero" class="footer__top magnetic" data-cursor="pointer">Back to top ↑</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <button class="top-btn" id="topBtn" aria-label="Back to top" data-cursor="pointer">
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="top-btn__track" cx="24" cy="24" r="20"/>
+      <circle class="top-btn__fill" id="topBtnFill" cx="24" cy="24" r="20"/>
+    </svg>
+    <span class="top-btn__arrow">↑</span>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://satyampatel779.github.io/sitemap.xml
