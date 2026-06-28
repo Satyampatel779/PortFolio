@@ -28,23 +28,6 @@ No build step — deploys directly to GitHub Pages.
 - Themed 404 page, console easter egg for devs
 - Fully responsive, `prefers-reduced-motion` support, no-JS fallback, skip link + focus styles
 
-## 🚀 Deploy to GitHub Pages
-
-### Option A — user site (cleanest URL: `https://satyampatel779.github.io`)
-
-```bash
-cd path/to/PortFolio
-git init
-git add .
-git commit -m "Portfolio launch"
-git branch -M main
-git remote add origin https://github.com/Satyampatel779/Satyampatel779.github.io.git
-git push -u origin main
-```
-
-Then on GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root) → Save.**
-Live in ~1 minute at **https://satyampatel779.github.io**
-
 ### Option B — project site (`https://satyampatel779.github.io/portfolio`)
 
 Same steps, but create a repo named `portfolio` and use its remote URL instead.
