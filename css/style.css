@@ -256,11 +256,19 @@ main { position: relative; z-index: 3; }
 .nav__logo-mark {
   width: 38px; height: 38px; border-radius: 11px;
   display: grid; place-items: center;
-  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+  overflow: hidden;
   background: var(--grad);
   color: #fff;
   box-shadow: 0 4px 22px rgba(168,85,247,0.45);
   transition: transform 0.4s var(--ease-spring);
+}
+.nav__logo-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 .nav__logo:hover .nav__logo-mark { transform: rotate(-10deg) scale(1.08); }
 .nav__logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
