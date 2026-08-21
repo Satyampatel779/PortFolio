@@ -1598,48 +1598,6 @@ section[id], #hero { scroll-margin-top: 84px; }
 .timeline__item:nth-of-type(4) { --pa: #4ade80; }
 .timeline__item:nth-of-type(5) { --pa: #6366f1; }
 
-/* ── "Before AI" — compact ledger for the pre-ML career ── */
-.prior { margin-top: 3.4rem; padding-top: 2.2rem; border-top: 1px solid var(--border); }
-.prior__head { display: flex; align-items: baseline; gap: 1rem; }
-.prior__title {
-  font-family: var(--font-display); font-size: 1.2rem; font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.prior__range {
-  margin-left: auto; font-family: var(--font-mono);
-  font-size: 0.72rem; letter-spacing: 0.18em; color: var(--text-faint);
-}
-.prior__note {
-  color: var(--text-dim); font-size: 0.92rem;
-  max-width: 62ch; margin: 0.6rem 0 1.5rem;
-}
-.prior__list {
-  list-style: none;
-  border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-}
-.prior-row {
-  display: grid; grid-template-columns: 8.5rem 1fr auto;
-  gap: 1rem; align-items: center;
-  padding: 0.95rem 1.25rem;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.35s var(--ease-out);
-}
-.prior-row:last-child { border-bottom: none; }
-.prior-row:hover { background: var(--surface-2); }
-.prior-row__year {
-  font-family: var(--font-mono); font-size: 0.74rem;
-  letter-spacing: 0.06em; color: var(--text-faint);
-  transition: color 0.35s var(--ease-out);
-}
-.prior-row:hover .prior-row__year { color: var(--c3); }
-.prior-row__role { font-size: 0.95rem; font-weight: 500; color: var(--text); }
-.prior-row__org { font-size: 0.86rem; color: var(--text-dim); text-align: right; }
-
-@media (max-width: 640px) {
-  .prior-row { grid-template-columns: 1fr; gap: 0.2rem; padding: 1rem 1.1rem; }
-  .prior-row__org { text-align: left; }
-}
-
 .timeline__card::after {
   content: "";
   position: absolute; top: 0; left: 12%; right: 12%; height: 2px;
