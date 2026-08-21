@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Email Signature — Satyam Patel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#060609; --bg-soft:#0b0b12;
+    --surface:rgba(255,255,255,.025); --surface-2:rgba(255,255,255,.05);
+    --border:rgba(255,255,255,.08); --border-bright:rgba(255,255,255,.16);
+    --text:#ecedf2; --dim:#9a9cad; --faint:#5c5e70;
+    --c1:#6366f1; --c2:#a855f7; --c3:#22d3ee; --c4:#f472b6;
+    --grad:linear-gradient(100deg,var(--c1),var(--c2) 45%,var(--c3));
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:"Inter",system-ui,sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; min-height:100vh;
+    background-image:
+      radial-gradient(60rem 40rem at 15% -10%, rgba(99,102,241,.13), transparent 60%),
+      radial-gradient(50rem 35rem at 100% 5%, rgba(34,211,238,.09), transparent 60%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:56px 24px 96px}
+
+  /* ─── header ─── */
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--faint); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--c1)}
+  h1{
+    font-family:"Space Grotesk",sans-serif; font-weight:700; letter-spacing:-.03em;
+    font-size:clamp(2rem,5vw,3.1rem); line-height:1.05; margin:14px 0 12px;
+  }
+  h1 em{
+    font-style:normal;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .lede{color:var(--dim);max-width:64ch;font-size:15px}
+
+  /* ─── layout ─── */
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;margin-top:44px;align-items:start}
+  @media (max-width:920px){.grid{grid-template-columns:1fr}}
+
+  .panel{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:18px; padding:22px;
+  }
+  .panel + .panel{margin-top:20px}
+  .panel h2{
+    font-family:"Space Grotesk",sans-serif; font-size:12px; font-weight:600;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--faint); margin-bottom:16px;
+  }
+
+  /* ─── variant tabs ─── */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px}
+  .tab{
+    font:inherit; font-size:13px; font-weight:500; cursor:pointer;
+    background:var(--surface-2); border:1px solid var(--border); color:var(--dim);
+    padding:9px 15px; border-radius:999px; transition:all .25s var(--ease);
+  }
+  .tab:hover{border-color:var(--border-bright);color:var(--text)}
+  .tab[aria-selected="true"]{
+    background:linear-gradient(100deg,rgba(99,102,241,.9),rgba(168,85,247,.9));
+    border-color:transparent; color:#fff;
+  }
+  .tab-note{margin-top:12px;font-size:12.5px;color:var(--faint);min-height:2.6em}
+
+  /* ─── toggles ─── */
+  .opts{display:flex;flex-direction:column;gap:2px}
+  .opt{
+    display:flex;align-items:center;gap:12px;cursor:pointer;
+    padding:10px 12px;border-radius:11px;transition:background .2s var(--ease);
+  }
+  .opt:hover{background:var(--surface-2)}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .switch{
+    flex:none;width:38px;height:22px;border-radius:999px;
+    background:rgba(255,255,255,.1);border:1px solid var(--border);
+    position:relative;transition:all .3s var(--ease);
+  }
+  .switch::after{
+    content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+    background:var(--faint);transition:all .3s var(--ease);
+  }
+  .opt input:checked + .switch{background:linear-gradient(100deg,var(--c1),var(--c2));border-color:transparent}
+  .opt input:checked + .switch::after{transform:translateX(16px);background:#fff}
+  .opt input:focus-visible + .switch{outline:2px solid var(--c3);outline-offset:2px}
+  .opt-label{font-size:13.5px;line-height:1.35}
+  .opt-label small{display:block;color:var(--faint);font-size:12px}
+
+  /* ─── email preview ─── */
+  .mail{
+    background:#fff;border-radius:16px;overflow:hidden;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,.7);
+  }
+  .mail__bar{
+    display:flex;align-items:center;gap:8px;padding:12px 16px;
+    background:#f4f5f7;border-bottom:1px solid #e5e7eb;
+  }
+  .dot{width:10px;height:10px;border-radius:50%;background:#d6d9de}
+  .dot:nth-child(1){background:#ff5f57}.dot:nth-child(2){background:#febc2e}.dot:nth-child(3){background:#28c840}
+  .mail__from{
+    margin-left:8px;font-size:12px;color:#6b7280;
+    font-family:"JetBrains Mono",monospace;
+  }
+  .mail__body{padding:26px 28px 30px;color:#111}
+  .mail__msg{
+    font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.65;color:#3f4550;
+  }
+  .mail__msg p{margin:0 0 14px}
+  .mail__rule{height:1px;background:#eceef1;margin:22px 0}
+  #preview{overflow-x:auto}
+
+  /* ─── buttons ─── */
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .btn{
+    font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+    padding:12px 20px;border-radius:11px;border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease);
+  }
+  .btn:active{transform:scale(.97)}
+  .btn--primary{background:var(--grad);color:#fff;box-shadow:0 8px 24px -8px rgba(99,102,241,.7)}
+  .btn--primary:hover{box-shadow:0 12px 30px -8px rgba(99,102,241,.9)}
+  .btn--ghost{background:var(--surface-2);border-color:var(--border);color:var(--text)}
+  .btn--ghost:hover{border-color:var(--border-bright)}
+  .btn.is-done{background:#16a34a!important;box-shadow:none!important}
+
+  /* ─── source ─── */
+  details.src{margin-top:20px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  details.src summary{
+    cursor:pointer;padding:14px 18px;font-size:13px;font-weight:500;color:var(--dim);
+    background:var(--surface-2);list-style:none;display:flex;align-items:center;gap:9px;
+  }
+  details.src summary::-webkit-details-marker{display:none}
+  details.src summary::before{content:"▸";transition:transform .25s var(--ease);color:var(--c1)}
+  details.src[open] summary::before{transform:rotate(90deg)}
+  details.src pre{
+    margin:0;padding:18px;max-height:340px;overflow:auto;
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.7;
+    color:#a9c6ef;background:#08080d;white-space:pre-wrap;word-break:break-word;
+  }
+
+  /* ─── how-to ─── */
+  .howto{margin-top:34px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .step{
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;
+    position:relative;overflow:hidden;
+  }
+  .step::before{
+    content:"";position:absolute;inset:0 auto 0 0;width:3px;
+    background:linear-gradient(180deg,var(--c1),var(--c3));
+  }
+  .step h3{
+    font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:600;margin-bottom:10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .step ol{margin:0;padding-left:18px;font-size:13px;color:var(--dim);line-height:1.75}
+  .step ol code{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;color:var(--text);
+  }
+  .tipbox{
+    margin-top:16px;border:1px solid rgba(34,211,238,.25);background:rgba(34,211,238,.05);
+    border-radius:14px;padding:16px 18px;font-size:13px;color:var(--dim);line-height:1.7;
+  }
+  .tipbox b{color:var(--c3);font-weight:600}
+  .tipbox ul{margin:8px 0 0;padding-left:18px}
+
+  footer{
+    margin-top:56px;padding-top:22px;border-top:1px solid var(--border);
+    font-size:12px;color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  footer a{color:var(--dim);text-decoration:none}
+  footer a:hover{color:var(--c3)}
+
+  /* live region for copy feedback */
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Email Signature Kit</div>
+    <h1>Sign off like <em>a senior engineer</em>.</h1>
+    <p class="lede">
+      Built table-first with inline styles only — no images, no web fonts, no CSS that Outlook
+      silently drops. Pick a layout, flip the toggles, hit copy, paste into your mail client. Done.
+    </p>
+  </header>
+
+  <div class="grid">
+
+    <!-- ══ LEFT: preview ══ -->
+    <main>
+      <div class="panel">
+        <h2>Preview</h2>
+        <div class="mail">
+          <div class="mail__bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="mail__from">New Message — to: recruiter@company.com</span>
+          </div>
+          <div class="mail__body">
+            <div class="mail__msg">
+              <p>Hi Priya,</p>
+              <p>Thanks for reaching out about the Machine Learning Engineer role — I'd be glad to
+                talk. I've attached my resume, and my portfolio below has write-ups of the RAG and
+                RL systems I've shipped.</p>
+              <p>Looking forward to connecting.</p>
+              <p>Best,<br />Satyam</p>
+            </div>
+            <div class="mail__rule"></div>
+            <div id="preview"></div>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button class="btn btn--primary" id="copyRich" type="button">Copy signature</button>
+          <button class="btn btn--ghost" id="copyHtml" type="button">Copy HTML source</button>
+          <button class="btn btn--ghost" id="copyText" type="button">Copy plain text</button>
+        </div>
+
+        <details class="src">
+          <summary>View HTML source</summary>
+          <pre id="source"></pre>
+        </details>
+      </div>
+    </main>
+
+    <!-- ══ RIGHT: controls ══ -->
+    <aside>
+      <div class="panel">
+        <h2>Layout</h2>
+        <div class="tabs" role="tablist" id="tabs"></div>
+        <p class="tab-note" id="tabNote"></p>
+      </div>
+
+      <div class="panel">
+        <h2>Options</h2>
+        <div class="opts">
+          <label class="opt">
+            <input type="checkbox" id="optPhone" checked />
+            <span class="switch" aria-hidden="true"></span>
+            <span class="opt-label">Phone number<small>Drop it for cold outreach</small></span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" id="optOpen" />
+            <span class="switch" aria-hidden="true"></span>
+            <span class="opt-label">"Open to work" line<small>Recruiter emails only</small></span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" id="optHF" checked />
+            <span class="switch" aria-hidden="true"></span>
+            <span class="opt-label">Hugging Face link<small>Strong signal for ML roles</small></span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" id="optLoc" checked />
+            <span class="switch" aria-hidden="true"></span>
+            <span class="opt-label">Location<small>Greater Toronto Area, Canada</small></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ══ HOW TO INSTALL ══ -->
+  <section class="howto">
+    <div class="panel">
+      <h2>Install it once, forget about it</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Gmail</h3>
+          <ol>
+            <li>Hit <b>Copy signature</b> above.</li>
+            <li>Gmail → <code>⚙ Settings</code> → <code>See all settings</code>.</li>
+            <li>Scroll to <b>Signature</b> → <code>Create new</code>, name it.</li>
+            <li>Click into the box and paste (<code>Ctrl+V</code>).</li>
+            <li>Set it as default for <b>New emails</b> and <b>Replies</b>.</li>
+            <li><code>Save Changes</code> at the bottom.</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h3>Outlook (web + new desktop)</h3>
+          <ol>
+            <li>Hit <b>Copy signature</b>.</li>
+            <li><code>⚙</code> → <code>Mail</code> → <code>Compose and reply</code>.</li>
+            <li><code>+ New signature</code>, paste into the editor.</li>
+            <li>Pick it under <b>Select default signatures</b>.</li>
+            <li><code>Save</code>.</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h3>Apple Mail</h3>
+          <ol>
+            <li>Hit <b>Copy signature</b>.</li>
+            <li><code>Mail</code> → <code>Settings</code> → <code>Signatures</code>.</li>
+            <li><code>+</code> to add, then paste.</li>
+            <li>Untick <b>Always match my default message font</b> — otherwise it strips the styling.</li>
+          </ol>
+        </div>
+        <div class="step">
+          <h3>Anywhere else</h3>
+          <ol>
+            <li>Use <b>Copy HTML source</b> for tools with a raw-HTML field (Zoho, Superhuman, HubSpot, Front).</li>
+            <li>Use <b>Copy plain text</b> for terminals, Slack, plain-text-only clients, and job boards.</li>
+            <li>Or open a file from <code>raw/</code>, select all, copy.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="tipbox">
+        <b>Two things that will save you an embarrassing email</b>
+        <ul>
+          <li>After installing, send yourself one test email and open it on your phone. Mobile Gmail is where bad signatures fall apart.</li>
+          <li>On replies, don't stack signatures — Gmail inserts yours above the quoted thread, so a long one repeats down the chain. That's exactly why the <b>Compact</b> layout exists: full signature on first contact, compact for the back-and-forth.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Satyam Patel · AI/ML Engineer</span>
+    <span><a href="../index.html">← Back to portfolio</a></span>
+  </footer>
+</div>
+
+<p class="sr" role="status" aria-live="polite" id="live"></p>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   DATA
+   ══════════════════════════════════════════════════════════════ */
+const D = {
+  name:      "Satyam Patel",
+  role:      "AI/ML Engineer",
+  company:   "Interact Health PRO",
+  email:     "Satyampatel779@gmail.com",
+  phone:     "437-757-7717",
+  phoneHref: "+14377577717",
+  location:  "Greater Toronto Area, Canada",
+  openTo:    "Open to AI/ML Engineer roles",
+  links: {
+    portfolio: "https://satyampatel779.github.io/PortFolio/",
+    github:    "https://github.com/Satyampatel779/",
+    linkedin:  "https://www.linkedin.com/in/satyampatel779/",
+    hf:        "https://huggingface.co/Satyamp777"
+  }
+};
+
+/* Email-safe palette. Light surface on purpose: dark signature blocks
+   get inverted or smeared by client dark-mode engines. */
+const C = {
+  ink:   "#0f1117",
+  body:  "#4b5563",
+  muted: "#6b7280",
+  faint: "#c8cbd3",
+  rule:  "#e5e7eb",
+  link:  "#5b5ef0",
+  a1:"#6366f1", a2:"#8b5cf6", a3:"#a855f7", a4:"#22d3ee"
+};
+
+const FONT = "-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+
+/* ══════════════════════════════════════════════════════════════
+   BUILDING BLOCKS — every one is table + inline-style only
+   ══════════════════════════════════════════════════════════════ */
+
+/* link with colour locked inline; clients repaint bare <a> tags otherwise */
+const link = (href, text, opt = {}) =>
+  '<a href="' + href + '"' + (href.startsWith("http") ? ' target="_blank" rel="noopener"' : '') +
+  ' style="color:' + (opt.color || C.link) + ';text-decoration:none;font-weight:' +
+  (opt.weight || 600) + ';">' + text + '</a>';
+
+/* bullet separator — padded with nbsp because <span> padding is unreliable */
+const sep = '<span style="color:' + C.faint + ';">&nbsp;&nbsp;·&nbsp;&nbsp;</span>';
+
+/* vertical brand bar: four stacked cells fake the gradient. A real
+   linear-gradient() renders in Gmail but is dropped by Outlook. */
+function bar(h) {
+  const seg = Math.round(h / 4);
+  const cell = c =>
+    '<tr><td width="4" height="' + seg + '" style="width:4px;height:' + seg + 'px;' +
+    'background-color:' + c + ';font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>';
+  return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+    'style="border-collapse:collapse;border-spacing:0;width:4px;">' +
+    cell(C.a1) + cell(C.a2) + cell(C.a3) + cell(C.a4) + '</table>';
+}
+
+/* horizontal brand rule, same trick */
+function rule(width) {
+  const seg = Math.round(width / 4);
+  const cell = c =>
+    '<td width="' + seg + '" height="3" style="width:' + seg + 'px;height:3px;' +
+    'background-color:' + c + ';font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td>';
+  return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+    'style="border-collapse:collapse;border-spacing:0;"><tr>' +
+    cell(C.a1) + cell(C.a2) + cell(C.a3) + cell(C.a4) + '</tr></table>';
+}
+
+const hairline =
+  '<table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" ' +
+  'style="border-collapse:collapse;border-spacing:0;width:100%;"><tr>' +
+  '<td height="1" style="height:1px;background-color:' + C.rule +
+  ';font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>';
+
+const spacer = px =>
+  '<div style="font-size:0;line-height:0;height:' + px + 'px;mso-line-height-rule:exactly;">&nbsp;</div>';
+
+/* ── shared text rows ───────────────────────────────────────── */
+
+const nameRow = size =>
+  '<div style="font-family:' + FONT + ';font-size:' + size + 'px;line-height:' + (size + 6) +
+  'px;font-weight:700;letter-spacing:-0.3px;color:' + C.ink + ';mso-line-height-rule:exactly;">' +
+  D.name + '</div>';
+
+const roleRow = () =>
+  '<div style="font-family:' + FONT + ';font-size:13px;line-height:19px;color:' + C.body +
+  ';padding-top:3px;mso-line-height-rule:exactly;">' + D.role +
+  '<span style="color:' + C.faint + ';">&nbsp;&nbsp;|&nbsp;&nbsp;</span>' +
+  '<span style="color:' + C.a1 + ';font-weight:600;">' + D.company + '</span></div>';
+
+function contactRow(o) {
+  let s = link("mailto:" + D.email, D.email);
+  if (o.phone) s += sep + link("tel:" + D.phoneHref, D.phone);
+  return '<div style="font-family:' + FONT + ';font-size:13px;line-height:20px;' +
+    'mso-line-height-rule:exactly;">' + s + '</div>';
+}
+
+function linksRow(o) {
+  const parts = [
+    link(D.links.portfolio, "Portfolio"),
+    link(D.links.github, "GitHub"),
+    link(D.links.linkedin, "LinkedIn")
+  ];
+  if (o.hf) parts.push(link(D.links.hf, "Hugging&nbsp;Face"));
+  return '<div style="font-family:' + FONT + ';font-size:13px;line-height:20px;padding-top:2px;' +
+    'mso-line-height-rule:exactly;">' + parts.join(sep) + '</div>';
+}
+
+function metaRow(o) {
+  const bits = [];
+  if (o.loc) bits.push(D.location);
+  if (o.open) bits.push('<span style="color:#16a34a;font-weight:600;">' + D.openTo + '</span>');
+  if (!bits.length) return "";
+  return spacer(8) +
+    '<div style="font-family:' + FONT + ';font-size:11.5px;line-height:17px;color:' + C.muted +
+    ';mso-line-height-rule:exactly;">' +
+    bits.join('<span style="color:' + C.faint + ';">&nbsp;&nbsp;·&nbsp;&nbsp;</span>') + '</div>';
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LAYOUTS
+   ══════════════════════════════════════════════════════════════ */
+const VARIANTS = {
+
+  /* ── 1. Accent bar — the default. Gradient spine, five tight lines. ── */
+  accent: {
+    label: "Accent Bar",
+    note: "The everyday default. A gradient spine pulled from your portfolio, five tight lines, nothing to load.",
+    build(o) {
+      const body =
+        nameRow(18) + roleRow() +
+        spacer(10) + hairline + spacer(10) +
+        contactRow(o) + linksRow(o) + metaRow(o);
+
+      return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+        'style="border-collapse:collapse;border-spacing:0;font-family:' + FONT + ';"><tr>' +
+        '<td width="4" valign="top" style="width:4px;padding:0;">' + bar(112) + '</td>' +
+        '<td width="18" style="width:18px;font-size:0;line-height:0;">&nbsp;</td>' +
+        '<td valign="top" style="padding:0;">' + body + '</td>' +
+        '</tr></table>';
+    }
+  },
+
+  /* ── 2. Monogram — SP tile. Built from a table cell, not an image. ── */
+  monogram: {
+    label: "Monogram",
+    note: "An SP tile built from a coloured table cell — no image to be blocked. Rounded in Gmail and Apple Mail, square in Outlook, sharp in both.",
+    build(o) {
+      const tile =
+        '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+        'style="border-collapse:collapse;border-spacing:0;"><tr>' +
+        '<td width="52" height="52" align="center" valign="middle" bgcolor="' + C.a1 + '" ' +
+        'style="width:52px;height:52px;background-color:' + C.a1 + ';border-radius:13px;' +
+        'font-family:' + FONT + ';font-size:20px;line-height:52px;font-weight:700;' +
+        'letter-spacing:.5px;color:#ffffff;mso-line-height-rule:exactly;">SP</td>' +
+        '</tr></table>';
+
+      const body =
+        nameRow(18) + roleRow() + spacer(9) +
+        contactRow(o) + linksRow(o) + metaRow(o);
+
+      return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+        'style="border-collapse:collapse;border-spacing:0;font-family:' + FONT + ';"><tr>' +
+        '<td width="52" valign="top" style="width:52px;padding:0;">' + tile + '</td>' +
+        '<td width="16" style="width:16px;font-size:0;line-height:0;">&nbsp;</td>' +
+        '<td width="1" valign="top" style="width:1px;padding:0;">' + bar(104) + '</td>' +
+        '<td width="16" style="width:16px;font-size:0;line-height:0;">&nbsp;</td>' +
+        '<td valign="top" style="padding:0;">' + body + '</td>' +
+        '</tr></table>';
+    }
+  },
+
+  /* ── 3. Compact — for replies, so threads don't turn into a wall. ── */
+  compact: {
+    label: "Compact",
+    note: "Three lines under a thin gradient rule. Use this on replies so a long thread doesn't fill up with repeated signatures.",
+    build(o) {
+      let l2 = link("mailto:" + D.email, D.email);
+      if (o.phone) l2 += sep + link("tel:" + D.phoneHref, D.phone);
+
+      const l3parts = [
+        link(D.links.portfolio, "Portfolio"),
+        link(D.links.github, "GitHub"),
+        link(D.links.linkedin, "LinkedIn")
+      ];
+      if (o.hf) l3parts.push(link(D.links.hf, "Hugging&nbsp;Face"));
+
+      return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" ' +
+        'style="border-collapse:collapse;border-spacing:0;font-family:' + FONT + ';"><tr><td style="padding:0;">' +
+        rule(180) + spacer(9) +
+        '<div style="font-family:' + FONT + ';font-size:14px;line-height:20px;font-weight:700;' +
+        'color:' + C.ink + ';mso-line-height-rule:exactly;">' + D.name +
+        '<span style="color:' + C.faint + ';font-weight:400;">&nbsp;&nbsp;—&nbsp;&nbsp;</span>' +
+        '<span style="color:' + C.body + ';font-weight:400;">' + D.role + '</span></div>' +
+        '<div style="font-family:' + FONT + ';font-size:13px;line-height:20px;padding-top:3px;' +
+        'mso-line-height-rule:exactly;">' + l2 + '</div>' +
+        '<div style="font-family:' + FONT + ';font-size:13px;line-height:20px;' +
+        'mso-line-height-rule:exactly;">' + l3parts.join(sep) + '</div>' +
+        metaRow(o) +
+        '</td></tr></table>';
+    }
+  }
+};
+
+/* ══════════════════════════════════════════════════════════════
+   PLAIN TEXT
+   ══════════════════════════════════════════════════════════════ */
+function buildText(o) {
+  const L = ["--", D.name, D.role + " | " + D.company, ""];
+  L.push("Email:     " + D.email);
+  if (o.phone) L.push("Phone:     " + D.phone);
+  L.push("Portfolio: " + D.links.portfolio);
+  L.push("GitHub:    " + D.links.github);
+  L.push("LinkedIn:  " + D.links.linkedin);
+  if (o.hf) L.push("Hugging Face: " + D.links.hf);
+  const tail = [];
+  if (o.loc) tail.push(D.location);
+  if (o.open) tail.push(D.openTo);
+  if (tail.length) { L.push(""); L.push(tail.join(" · ")); }
+  return L.join("\n");
+}
+
+/* ══════════════════════════════════════════════════════════════
+   UI
+   ══════════════════════════════════════════════════════════════ */
+const $ = id => document.getElementById(id);
+let current = "accent";
+
+function opts() {
+  return {
+    phone: $("optPhone").checked,
+    open:  $("optOpen").checked,
+    hf:    $("optHF").checked,
+    loc:   $("optLoc").checked
+  };
+}
+
+/* readable indentation for the source view — the copied HTML stays minified */
+function pretty(html) {
+  return html
+    .replace(/></g, ">\n<")
+    .split("\n")
+    .reduce((acc, line) => {
+      if (/^<\/(table|tr|td|div)/.test(line)) acc.depth = Math.max(0, acc.depth - 1);
+      acc.out.push("  ".repeat(acc.depth) + line);
+      if (/^<(table|tr|td|div)(?![^>]*\/>)/.test(line) && !/<\/[a-z]+>$/.test(line)) acc.depth++;
+      return acc;
+    }, { depth: 0, out: [] }).out.join("\n");
+}
+
+function render() {
+  const o = opts();
+  const html = VARIANTS[current].build(o);
+  $("preview").innerHTML = html;
+  $("source").textContent = pretty(html);
+  $("tabNote").textContent = VARIANTS[current].note;
+  document.querySelectorAll(".tab").forEach(t =>
+    t.setAttribute("aria-selected", String(t.dataset.k === current)));
+}
+
+/* rich copy: ClipboardItem where available, DOM-selection fallback everywhere else */
+async function copyRich(html, text) {
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      "text/html":  new Blob([html], { type: "text/html" }),
+      "text/plain": new Blob([text], { type: "text/plain" })
+    })]);
+    return true;
+  } catch (e) {
+    const host = document.createElement("div");
+    host.setAttribute("contenteditable", "true");
+    host.style.cssText = "position:fixed;top:0;left:-9999px;opacity:0;white-space:normal;";
+    host.innerHTML = html;
+    document.body.appendChild(host);
+    const range = document.createRange();
+    range.selectNodeContents(host);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+    selection.removeAllRanges();
+    host.remove();
+    return ok;
+  }
+}
+
+async function copyPlain(str) {
+  try { await navigator.clipboard.writeText(str); return true; }
+  catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = str;
+    ta.style.cssText = "position:fixed;top:0;left:-9999px;";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+    ta.remove();
+    return ok;
+  }
+}
+
+function flash(btn, ok) {
+  const original = btn.dataset.label || btn.textContent;
+  btn.dataset.label = original;
+  btn.textContent = ok ? "✓ Copied" : "Press Ctrl+C";
+  btn.classList.toggle("is-done", ok);
+  $("live").textContent = ok ? "Copied to clipboard" : "Copy failed — select manually";
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove("is-done");
+  }, 1900);
+}
+
+/* build tabs */
+$("tabs").innerHTML = Object.entries(VARIANTS).map(([k, v]) =>
+  '<button class="tab" role="tab" type="button" data-k="' + k + '">' + v.label + '</button>'
+).join("");
+
+$("tabs").addEventListener("click", e => {
+  const t = e.target.closest(".tab");
+  if (!t) return;
+  current = t.dataset.k;
+  render();
+});
+
+["optPhone", "optOpen", "optHF", "optLoc"].forEach(id =>
+  $(id).addEventListener("change", render));
+
+$("copyRich").addEventListener("click", async e => {
+  const o = opts();
+  flash(e.currentTarget, await copyRich(VARIANTS[current].build(o), buildText(o)));
+});
+$("copyHtml").addEventListener("click", async e => {
+  flash(e.currentTarget, await copyPlain(VARIANTS[current].build(opts())));
+});
+$("copyText").addEventListener("click", async e => {
+  flash(e.currentTarget, await copyPlain(buildText(opts())));
+});
+
+render();
+</script>
+</body>
+</html>
