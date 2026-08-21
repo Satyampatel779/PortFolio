@@ -1596,7 +1596,6 @@ section[id], #hero { scroll-margin-top: 84px; }
 .timeline__item:nth-of-type(2) { --pa: #a855f7; }
 .timeline__item:nth-of-type(3) { --pa: #22d3ee; }
 .timeline__item:nth-of-type(4) { --pa: #4ade80; }
-.timeline__item:nth-of-type(5) { --pa: #6366f1; }
 
 .timeline__card::after {
   content: "";
