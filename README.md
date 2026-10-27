@@ -9,7 +9,7 @@ No build step — deploys directly to GitHub Pages.
 - Custom cursor (glowing dot + spring-lagged ring with "View" label on projects)
 - Interactive neural-network particle canvas that reacts to the mouse
 - Aurora gradient blobs (with mouse parallax) + film-grain noise overlay + hero grid
-- Hand-drawn **animated SVG architecture diagrams** on all six featured projects *and* all three experience cards (RAG pipeline, pose-estimation skeleton, plant-disease CNN)
+- Hand-drawn **animated SVG architecture diagrams** on all six featured projects *and* all four experience cards (AI-automation flow, RAG pipeline, pose-estimation skeleton, plant-disease CNN)
 - Experience cards styled like featured work: per-card accent colors, glow borders, impact stat strips
 - **Live terminal card** in About — types out a `whoami` profile on scroll, with glowing halo + orbiting chips
 - Rotating "OPEN TO WORK" circular badge in the hero (wide screens)
@@ -28,9 +28,10 @@ No build step — deploys directly to GitHub Pages.
 - Themed 404 page, console easter egg for devs
 - Fully responsive, `prefers-reduced-motion` support, no-JS fallback, skip link + focus styles
 
-### Option B — project site (`https://satyampatel779.github.io/portfolio`)
+## 🚀 Deploy
 
-Same steps, but create a repo named `portfolio` and use its remote URL instead.
+Live as a GitHub Pages **project site** at <https://satyampatel779.github.io/PortFolio/>
+(repo `Satyampatel779/PortFolio`, branch `main`, served from the root). Push to `main` and Pages redeploys.
 
 ## 🗂 Structure
 
@@ -41,18 +42,26 @@ Same steps, but create a repo named `portfolio` and use its remote URL instead.
 ├── sitemap.xml         # search-engine sitemap
 ├── css/style.css       # design system + animations
 ├── js/script.js        # cursor, canvas, GSAP choreography
+├── resume/
+│   ├── resume.tex      # resume source (LaTeX) — single source of truth
+│   └── build.ps1       # pdflatex → copies PDF into assets/
 ├── assets/
-│   ├── Satyam_Patel_Resume.pdf
+│   ├── Satyam_Patel_Resume.pdf   # built from resume/resume.tex
 │   └── og-image.png    # social-share preview card (1200x630)
+├── email-signature/    # email-signature builder (index.html) + generated raw/ files
 └── .nojekyll           # serve files as-is on Pages
 ```
 
-> Deploying as a **project site** instead of the user site? Update the absolute URLs
-> (`canonical`, `og:url`, `og:image`, `twitter:image`) in `index.html` to match.
+> All absolute URLs (`canonical`, `og:url`, `og:image`, `twitter:image`, JSON-LD, `robots.txt`,
+> `sitemap.xml`, the 404 "back" link) point at `/PortFolio/`. If the site ever moves, update them together.
 
 ## ✏️ Updating content
 
 - **Projects / experience / skills:** edit the matching `<section>` in `index.html` — every card is self-contained markup.
-- **Resume:** replace `assets/Satyam_Patel_Resume.pdf` (keep the filename).
+- **Resume:** edit `resume/resume.tex` (the one master resume), then run `resume/build.ps1` (needs MiKTeX/TeX Live).
+  It rebuilds the PDF and copies it to `assets/Satyam_Patel_Resume.pdf`, which both download buttons serve.
+- **Tailoring for a job:** copy `resume.tex` to `resume/tailored/<company-role>.tex`, edit it for that posting, and run
+  `resume/build.ps1 -Job <company-role>`. The PDF lands in `resume/tailored/<company-role>/Satyam_Patel_Resume.pdf`.
+  `resume/tailored/` is git-ignored, so per-application versions never get published with the site.
 - **Typewriter roles:** the `roles` array at the top of `js/script.js`.
 - **Colors:** the `--c1 … --c4` variables at the top of `css/style.css`.

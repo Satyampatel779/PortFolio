@@ -1,0 +1,9 @@
+# LaTeX build output (resume/build.ps1 copies the finished master PDF into assets/)
+resume/build/
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
+
+# Job-tailored resumes stay local: they're per-application and this repo is a public website
+resume/tailored/

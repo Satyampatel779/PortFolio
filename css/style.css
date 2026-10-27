@@ -852,7 +852,6 @@ main { position: relative; z-index: 3; }
   color: var(--c4); border-color: rgba(244, 114, 182, 0.4);
   background: rgba(244, 114, 182, 0.08);
 }
-
 /* ════════════════════════════════════════════════
    PROJECTS
    ════════════════════════════════════════════════ */
@@ -1529,6 +1528,13 @@ section[id], #hero { scroll-margin-top: 84px; }
   object-fit: contain;
   border-radius: 6px;
 }
+/* no-logo variant (e.g. a startup that no longer exists) */
+.timeline__badge--glyph {
+  background: var(--surface-2);
+  font-size: 1.15rem;
+  color: var(--pa, var(--c2));
+  text-shadow: 0 0 14px color-mix(in srgb, var(--pa, #a855f7) 60%, transparent);
+}
 .timeline__card:hover .timeline__badge {
   transform: scale(1.08) rotate(-4deg);
   box-shadow: 0 8px 28px color-mix(in srgb, var(--pa, #a855f7) 35%, transparent);
@@ -1596,7 +1602,6 @@ section[id], #hero { scroll-margin-top: 84px; }
 .timeline__item:nth-of-type(2) { --pa: #a855f7; }
 .timeline__item:nth-of-type(3) { --pa: #22d3ee; }
 .timeline__item:nth-of-type(4) { --pa: #4ade80; }
-.timeline__item:nth-of-type(5) { --pa: #6366f1; }
 
 .timeline__card::after {
   content: "";

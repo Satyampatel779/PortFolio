@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://satyampatel779.github.io/sitemap.xml
+Sitemap: https://satyampatel779.github.io/PortFolio/sitemap.xml

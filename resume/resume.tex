@@ -1,0 +1,240 @@
+%-------------------------------------------------------------------------------
+% Satyam Patel — Resume
+% Build:  resume\build.ps1   (pdflatex x2, then copies the PDF to
+%         assets\Satyam_Patel_Resume.pdf so the portfolio serves the latest)
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[margin=0.45in,top=0.4in,bottom=0.4in]{geometry}
+\linespread{0.97}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}            % Times-style text, matches the previous resume
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{multicol}
+\setlength{\multicolsep}{0pt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\input{glyphtounicode}
+\pdfgentounicode=1                % keeps the PDF text ATS-readable
+
+\hypersetup{
+  pdftitle={Satyam Patel - Resume},
+  pdfauthor={Satyam Patel},
+  pdfsubject={AI Engineer},
+  pdfkeywords={AI Engineer, RAG, LLM, Reinforcement Learning, Computer Vision, Automation}
+}
+
+\pagestyle{empty}
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
+
+% ── section headings: small caps-ish bold title over a hairline rule ─────────
+\titleformat{\section}
+  {\bfseries\large}{}{0em}{\MakeUppercase}[\vspace{-1pt}{\color{black!45}\titlerule}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% ── list styles ──────────────────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=0.16in, label={\textbullet}, itemsep=0pt, parsep=0.6pt, topsep=1pt}
+
+% ── building blocks ──────────────────────────────────────────────────────────
+% \org{Organisation}
+\newcommand{\org}[1]{\vspace{2pt}\textbf{#1}\par\vspace{-1pt}}
+
+% \role{Title}{Location}{Dates}   location may be left empty
+\newcommand{\role}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textit{#1} & \ifx&#2&\else\textit{#2}\ \ $\cdot$\ \ \fi\textbf{#3}\\
+  \end{tabularx}\vspace{-3pt}}
+
+% \edu{School}{Date}{Program}{Location}
+\newcommand{\edu}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2}\\
+    \textit{#3} & \textit{#4}\\
+  \end{tabularx}\vspace{1pt}}
+
+% \project{Name}{Stack}{URL}   URL may be left empty
+\newcommand{\project}[3]{%
+  \Needspace{4\baselineskip}\vspace{2pt}\textbf{#1}\ \ \ifx&#3&\textit{#2}\else\href{#3}{\underline{#2}}\fi\par\vspace{-1pt}}
+
+\newcommand{\skill}[2]{\item \textbf{#1}: #2}
+
+%===============================================================================
+\begin{document}
+
+%----------------------------------- HEADING -----------------------------------
+\begin{center}
+  {\fontsize{24}{26}\selectfont Satyam Patel}\\[3pt]
+  \small
+  437-757-7717\ \ $|$\ \
+  \href{mailto:Satyampatel779@gmail.com}{\underline{Satyampatel779@gmail.com}}\ \ $|$\ \
+  \href{https://www.linkedin.com/in/satyampatel779/}{\underline{LinkedIn}}\ \ $|$\ \
+  \href{https://github.com/Satyampatel779}{\underline{GitHub}}\ \ $|$\ \
+  \href{https://satyampatel779.github.io/PortFolio/}{\underline{Portfolio}}
+\end{center}
+\vspace{-6pt}
+
+%----------------------------------- SUMMARY -----------------------------------
+\section{Summary}
+AI Engineer who designs and ships LLM-powered workflows end to end. At Interact Health PRO, I lead a 10+ member
+cross-functional team automating healthcare intake, onboarding, and reporting with Claude, Gemini, Airtable, and
+Make.com. Previously built a RAG chatbot for a legal-tech startup that cut LLM hallucinations by 98\% with
+sub-1.5\,s retrieval across 25k documents, and improved pose-estimation accuracy by 18\% for a CCTV computer-vision
+startup. Grounded in reinforcement learning (University of Alberta) and applied computer-vision research.
+
+%---------------------------------- EDUCATION ----------------------------------
+\section{Education}
+\edu{University of Alberta}{Apr 2026}{Specialization in Reinforcement Learning}{Edmonton, AB}
+\edu{Conestoga College}{Dec 2025}{Post Graduate Program, Big Data Solution Architecture}{Kitchener, ON}
+\edu{Conestoga College}{Aug 2024}{Post Graduate Program, Artificial Intelligence and Machine Learning}{Waterloo, ON}
+\edu{Lovely Professional University}{Dec 2020}{Bachelor of Technology, Computer Science}{India}
+
+%---------------------------------- EXPERIENCE ---------------------------------
+\section{Experience}
+
+\org{Interact Health PRO (IHP)}
+\role{Project Manager -- AI Automation Engineer}{Kitchener, ON}{May 2026 -- Present}
+\begin{itemize}
+  \item Lead project coordination for a 10+ member cross-functional intern team, using Scikit-Learn and Google Gemini to
+        design AI-supported healthcare rehabilitation coordination, client intake, and medical-legal workflow prototypes,
+        resulting in faster intake processing and reduced manual effort
+  \item Architect structured Claude AI workflows with Claude Skills, Routines, and CLAUDE.md, creating repeatable SOPs that
+        replace manual administrative tasks across intake, onboarding, and reporting, which improved process consistency
+        and cut task completion time
+  \item Build automation infrastructure using Airtable and Make.com, engineering conditional-logic triggers and task-based
+        AI agents to route communications, track progress, and generate operational reports, enabling real-time
+        visibility and decreasing reporting latency
+  \item Direct sprint planning and workflow-mapping sessions with Operations, Development, and Analyst teams, maintaining
+        process documentation in Git and conducting testing cycles, which ensured automation reliability and on-time
+        delivery of features
+\end{itemize}
+
+\org{Legal-Tech Startup \normalfont\textit{(contract-related tax guidance)}}
+\role{RAG Chatbot Developer}{Remote}{Jan 2026 -- Aug 2026}
+\begin{itemize}
+  \item Engineered an end-to-end Retrieval-Augmented Generation (RAG) chatbot using LangChain and PyTorch on AWS to answer
+        users' contract-related tax questions, applying Test-Driven Development and Git version control, which cut LLM
+        hallucinations by 98\% and produced factual, context-aware outputs
+  \item Integrated the Pinecone vector database containing over 25,000 embedded documents, enabling rapid semantic search
+        and retrieving precise domain knowledge in under 1.5 seconds
+  \item Fine-tuned the base language model on proprietary data and deployed the chatbot into the startup's production
+        application, which drove a 35\% increase in user engagement
+\end{itemize}
+\org{Computer Vision Startup \normalfont\textit{(CCTV human detection \& movement tracking)}}
+\role{Computer Vision Data Specialist}{Remote}{Dec 2025 -- Feb 2026}
+\begin{itemize}
+  \item Boosted human pose estimation accuracy by 18\% in real-world environments by identifying and resolving over 1,000
+        complex occlusion edge cases within the training dataset
+  \item Refined spatial alignment for ground-truth data across 10,000+ images by recalibrating overlapping body keypoints
+        with in-house script tools, which improved input fidelity for the computer-vision pipeline
+  \item Decreased false-positive detection rates by 22\% through rigorous data quality control and manual keypoint
+        annotation, directly solving the model's inability to handle overlapping limbs
+\end{itemize}
+
+\org{Conestoga College}
+\role{Graduate Research Assistant}{Waterloo, ON}{Jan 2024 -- Aug 2024}
+\begin{itemize}
+  \item Engineered ``The Plant Guard'' system and conducted academic research to address precision-agriculture challenges
+        by designing end-to-end computer-vision pipelines with TensorFlow and OpenCV, enabling early detection of plant
+        diseases and reducing manual scouting time
+  \item Processed and augmented a dataset of tens of thousands of images using Python and Pandas, then delivered the
+        cleaned data to leadership so they could make informed decisions
+  \item Architected and trained multiple neural networks using TensorFlow and Keras, establishing a baseline with a custom
+        Vanilla CNN and improving feature extraction by implementing Transfer Learning with a fine-tuned VGG16 model
+  \item Achieved 90\%+ classification accuracy across multiple plant species and pathology categories, delivering a
+        scalable, modular machine learning pipeline optimized for future deployment on mobile and edge computing devices
+\end{itemize}
+
+%----------------------------------- PROJECTS ----------------------------------
+\Needspace{6\baselineskip}
+\section{Projects}
+
+\project{Autonomous LLM Reasoning Agent (RLVR / GRPO)}{PyTorch, GRPO, LoRA, Unsloth, Hugging Face}{https://huggingface.co/Satyamp777/Qwen-GRPO-Agent}
+\begin{itemize}
+  \item Aligned a Qwen model for autonomous chain-of-thought reasoning with GRPO (RLVR), replacing the critic and reward
+        models with verifiable regex-based rewards
+  \item Ran the full multi-generation RL training loop on a single 16\,GB T4 GPU using Unsloth, LoRA, and 4-bit
+        quantization, avoiding multi-GPU A100 clusters
+  \item Built deterministic experimentation frameworks to evaluate model outputs reproducibly
+  \item Published the trained model on Hugging Face
+\end{itemize}
+
+\project{Multi-Agent Text-to-SQL Data Analyst}{LangGraph, Llama-3.3 (Groq), MongoDB, Docker}{https://github.com/Satyampatel779/Multi-Agent-Text-to-SQL-System}
+\begin{itemize}
+  \item Migrated a multi-agent Generative AI application to a self-hosted \textbf{n8n} server, automating complex
+        \textbf{LangGraph} LLM workflows to translate natural language into SQL, which reduced manual query processing
+        time by 85\%
+  \item Re-architected the backend infrastructure by transitioning to a highly scalable \textbf{MongoDB} database,
+        optimizing the system to handle enterprise datasets and supporting 50,000+ concurrent real-time requests with
+        sub-second latency
+  \item Productionized real-time AI microservices using \textbf{FastAPI} and \textbf{Docker}, engineering automated CI/CD
+        pipelines that accelerated model deployment cycles by 40\% while ensuring robust data governance and security
+  \item Designed a self-correcting agent loop: a SQL Writer (Llama-3.3-70B), a sandboxed Executor/Critic that reads its own
+        tracebacks and retries, and an Analyst agent that turns query results into business insights
+\end{itemize}
+
+\project{Autonomous Cloud Resource Optimizer}{Stable-Baselines3 (PPO), Gymnasium, Streamlit, TensorBoard, Plotly}{https://github.com/Satyampatel779/Cloud-RL-Optimizer}
+\begin{itemize}
+  \item Engineered a custom Reinforcement Learning environment using Python and Gymnasium to simulate network traffic, and
+        trained a PPO agent with Stable-Baselines3 to autonomously scale cloud servers up or down based on demand
+  \item Designed a specialized reward function that balanced system performance with power efficiency, successfully
+        reducing simulated cloud infrastructure costs by 30\% while maintaining reliable server uptime
+  \item Packaged the trained model into a Dockerized FastAPI microservice with RESTful APIs, creating a ready-to-deploy
+        CI/CD solution that can easily integrate with platforms like Microsoft Azure and AWS for real-time resource management
+\end{itemize}
+
+\project{AI Automation Pipeline Suite}{n8n, Google Cloud Vertex AI, Veo, Gemini, Claude API, FFmpeg}{}
+\begin{itemize}
+  \item Built an end-to-end AI video production pipeline in n8n that converts a single text prompt into a 12-scene
+        storyboard, AI-generated video clips, captions, narration assets, and render-ready outputs using Gemini 2.5 Pro and Veo
+  \item Architected a resilient asynchronous orchestration layer for long-running generation jobs with polling, retry logic,
+        cloud status tracking, GCS URI-to-HTTPS conversion, and automated asset handling, keeping per-clip delivery under 3 minutes
+  \item Automated post-production and publishing by generating SRT caption files, FFmpeg concat manifests, structured output
+        paths, quality-filtered downloads, and YouTube uploads with metadata, privacy settings, and video tracking handled inside n8n
+  \item Developed a multi-brand AI product feed optimization system using LLM APIs to process full product catalogs and
+        generate Google Merchant Center titles, Google Ads copy, Meta ad assets, and campaign-ready marketing files from a
+        centralized brand configuration
+\end{itemize}
+
+%-------------------------------- CERTIFICATIONS -------------------------------
+\section{Certifications}
+\begin{itemize}
+  \item Microsoft AI \& ML Engineering: Microsoft Azure for AI and Machine Learning
+  \item Microsoft Building Intelligent Troubleshooting Agents: Microsoft Azure AI: Workloads and Machine Learning on Azure
+\end{itemize}
+\vspace{-1.5pt}
+\begin{multicols}{2}
+\begin{itemize}
+  \item Microsoft Professional Program in Artificial Intelligence
+  \item TCPS 2: CORE
+  \item COC Workshop
+  \item Amazon Alexa Developer
+\end{itemize}
+\end{multicols}
+
+%------------------------------- TECHNICAL SKILLS ------------------------------
+\section{Technical Skills}
+\begin{itemize}
+  \skill{Generative AI \& LLMs}{LangChain, LangGraph, Vector Databases, RAG Systems, OpenAI APIs, Open-Source LLMs
+        (DeepSeek, Llama-3.3), Prompt Engineering, LoRA, Hugging Face, Foundational Models, Agentic AI, Google Gemini,
+        Vertex AI, Veo, Text-to-Speech (TTS)}
+  \skill{Machine Learning \& Deep Learning}{PyTorch, TensorFlow, Keras, Scikit-Learn, NLP, Feature Engineering, Statistical
+        Modeling, Anomaly Detection, Data Mining, Model Drift Monitoring, Deep Reinforcement Learning}
+  \skill{Reinforcement Learning}{PPO, GRPO, Stable-Baselines3, Custom MDP Design, Power Efficiency Modeling, Gymnasium,
+        Custom SARSA}
+  \skill{Data Engineering \& Languages}{Python (NumPy, Pandas, Scikit-learn), SQL (PostgreSQL, SQLite), MongoDB (NoSQL),
+        C/C++, JavaScript, Apache Spark, Hadoop, Data Pipelines, Data Structures \& Algorithms}
+  \skill{MLOps \& Cloud}{Docker, FastAPI (Microservices), RESTful APIs, CI/CD Pipelines, Microsoft Azure, AWS, Streamlit,
+        TensorBoard, Git, Linux, DevOps, Test-Driven Development (TDD), Google Cloud Platform (GCP), Google Cloud Storage (GCS)}
+  \skill{XAI \& Interpretability}{Visualization Techniques, Reward/Feature Attribution, SHAP, LIME}
+  \skill{AI Orchestration \& Automation}{Claude (Skills, Routines, CLAUDE.md), n8n, Make.com, Airtable, Multi-Agent Workflows,
+        Semantic Routing / Tool Calling, Apache Kafka / RabbitMQ, ETL / ELT Automation, Webhooks \& API Integration,
+        YouTube Data API v3, RapidAPI, OAuth 2.0 Integration}
+  \skill{Languages}{English and Hindi (bilingual), French (intermediate)}
+\end{itemize}
+
+\end{document}
